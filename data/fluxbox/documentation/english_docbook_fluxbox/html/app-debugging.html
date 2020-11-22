@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Debugging</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Artwiz fonts for Fluxbox"
+HREF="app-artwiz.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="APPENDIX"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="app-artwiz.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="APP-DEBUGGING"
+></A
+>Appendix E. Debugging</H1
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN1794"
+></A
+>General information</H2
+><P
+>Debugging is a skill which you can learn. There are quite a
+few good documents that describe how to make a good bug reports.
+Please read them before you get into action, your bug won't run
+away and it won't kill you. Rather we want to kill the bug and we
+want your help :-) So lets go to battle well prepared. Two nice
+documents are the <A
+HREF="http://www.mozilla.org/quality/bug-writing-guidelines.html"
+TARGET="_top"
+>Bugzilla
+Bug Reporting HOWTO</A
+> and Simon Tathams <A
+HREF="http://www.chiark.greenend.org.uk/~sgtatham/bugs.html"
+TARGET="_top"
+>How to
+Report Bugs Effectively</A
+>.</P
+><P
+>Due to the nature of some unofficial patches, we can't
+support them all. This means (for you) that you should check if
+Fluxbox crashes <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>without</I
+></SPAN
+> the patches you
+applied, too. If the patches of your Fluxbox were applied by some
+distribution maintainer, contact him about the issue.</P
+><P
+>If you require more help with debugging than this guide
+provides, you may also see if one of people on #fluxbox at
+irc.freenode.net is of help. As the main developers and quite a
+bunch of qualified people are usually there, chances are that we
+can sort things out.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN1801"
+></A
+>Specific Fluxbox things</H2
+><H3
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN1802"
+></A
+>Output from Fluxbox</H3
+><P
+>Like any other application Fluxbox sends all messages to the
+console it was started from. The problem is that under normal
+circumstances all output goes to the <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>text</I
+></SPAN
+>
+console. Change your Fluxbox start line to <KBD
+CLASS="USERINPUT"
+>exec
+xterm</KBD
+> or whatever your favorite terminal emulator may
+be. Start X11 and start Fluxbox in that xterm, and lo and behold,
+you can easily see all messages from Fluxbox.</P
+><H3
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN1806"
+></A
+>The info we want</H3
+><P
+>We want to know a lot of things. Make sure you know all
+about them.</P
+><P
+></P
+><UL
+><LI
+><P
+>Your operating system / distribution and its
+version.</P
+></LI
+><LI
+><P
+>Fluxbox version, if CVS (or development tarball) then which
+day?</P
+></LI
+><LI
+><P
+>When did it happen? Did you do something? Can you
+reproduce it?</P
+></LI
+><LI
+><P
+>Your settings. They can be found in
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+></P
+></LI
+></UL
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN1818"
+></A
+>What to do with core
+dumps.</H2
+><P
+>So if you ever get a core dump with Fluxbox do the
+following: Go to the channel #fluxbox on OPN and tell fluxgen you
+got a core dump. Give him all the info he asks for. He will
+probably also ask you to do the following. It's quite a lot of
+work but anybody with a bit of common sense and some Unix
+experience can do it. Oh, and you need the GNU debugger, called
+<TT
+CLASS="FILENAME"
+>gdb</TT
+>.</P
+><H3
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN1821"
+></A
+>Rebuild Fluxbox</H3
+><P
+>Yes you read it right. To become a real debugger you have to
+rebuild Fluxbox with debugging symbols.</P
+><P
+>Build Fluxbox as usual and add the following option when you
+do the make:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ CFLAGS=-Wall -g3 CXXFLAGS=-Wall -g3 make</PRE
+><P
+>If you use the source RPMs from the Fluxbox site or your
+distribution you can do something like this:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ su
+    # rpm -ivh fluxbox-0.1.11.1mdk.src.rpm
+    # cd /usr/src/RPM/SPECS
+    # env DEBUG=true rpm -ba fluxbox.spec
+    # rpm -Uvh --force /usr/src/RPM/RPMS/i686/fluxbox*
+    # exit
+    $ mkdir -p ~/src/fluxbox
+    $ cp -R /usr/src/RPM/BUILD/fluxbox* ~/src/fluxbox</PRE
+><P
+>Go to the Fluxbox directory (So we get the core dump in the
+right place).  The shell has a nifty feature that disables
+core-files so make sure you really get a core file with:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ ulimit -c unlimited</PRE
+><P
+>Start X11 and let's debug. Do whatever it takes to make
+Fluxbox dump core. And now we start debugging:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ gdb fluxbox core</PRE
+><P
+>And issue this command in <TT
+CLASS="FILENAME"
+>gdb</TT
+> (the first part is
+<TT
+CLASS="FILENAME"
+>gdb</TT
+>s prompt, don't type it :)):</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    (gdb) where</PRE
+><P
+>Now you get a lot of output. Fluxgen wants to know all the
+output that starts with a <SAMP
+CLASS="COMPUTEROUTPUT"
+>#</SAMP
+>.</P
+><P
+>Now paste that into an e-mail to fluxgen and also attach the
+four settings files in <TT
+CLASS="FILENAME"
+>~/.fluxbox/</TT
+>.</P
+><P
+>Please do not remove the core and the source code directory
+yet. Fluxgen may want to ask you a few extra question and then you
+will need them. Please do not send the core file to fluxgen if he
+does not ask specifically - since it is specific to your system,
+it most probably is of no use to him and core files tend to be
+quite big.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="app-artwiz.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Artwiz fonts for Fluxbox</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

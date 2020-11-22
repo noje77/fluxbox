@@ -1,0 +1,462 @@
+<HTML
+><HEAD
+><TITLE
+>Fluxbox Documentation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="NEXT"
+TITLE="Introduction"
+HREF="c16.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="BOOK"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="BOOK"
+><A
+NAME="AEN1"
+></A
+><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="TITLE"
+><A
+NAME="AEN2"
+></A
+>Fluxbox Documentation</H1
+><H3
+CLASS="AUTHOR"
+><A
+NAME="AEN4"
+></A
+>Tobias Klausmann</H3
+><HR></DIV
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+>1. <A
+HREF="c16.html"
+>Introduction</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c16.html#AEN18"
+>A propos de cette documentation</A
+></DT
+><DT
+><A
+HREF="x31.html"
+>A propos de Fluxbox</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="x31.html#AEN33"
+>Qu'est ce qu'est Fluxbox ?</A
+></DT
+><DT
+><A
+HREF="x31.html#AEN37"
+>Fonctionnalités</A
+></DT
+><DT
+><A
+HREF="x31.html#AEN72"
+>Récupérer Fluxbox</A
+></DT
+><DT
+><A
+HREF="x31.html#AEN76"
+>Poser des questions et trouver du support</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>2. <A
+HREF="c80.html"
+>Pour commencer</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c80.html#AEN82"
+>Installer Fluxbox</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c80.html#AEN87"
+>Acquérir les sources</A
+></DT
+><DT
+><A
+HREF="c80.html#AEN91"
+>Extraire et compiler</A
+></DT
+><DT
+><A
+HREF="c80.html#AEN103"
+>Démarrer Fluxbox</A
+></DT
+><DT
+><A
+HREF="c80.html#AEN125"
+>Pour finir</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>3. <A
+HREF="c133.html"
+>Outils</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c133.html#AEN135"
+>Introduction</A
+></DT
+><DT
+><A
+HREF="x141.html"
+><TT
+CLASS="FILENAME"
+>fbrun</TT
+></A
+></DT
+><DT
+><A
+HREF="x161.html"
+>fluxbox-generate_menu</A
+></DT
+></DL
+></DD
+><DT
+>4. <A
+HREF="chap-tabs.html"
+>Les onglets</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="chap-tabs.html#AEN166"
+>Une introduction aux onglets</A
+></DT
+><DT
+><A
+HREF="x174.html"
+>Manipulation avancée des Onglets</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="x174.html#AEN176"
+>Sloppy Window Grouping (Placement stupide des onglets)</A
+></DT
+><DT
+><A
+HREF="x174.html#AEN181"
+>Manipulation des onglets pour des fenêtres solitaires</A
+></DT
+><DT
+><A
+HREF="x174.html#AEN186"
+>Désactiver les onglets entiérement</A
+></DT
+><DT
+><A
+HREF="x174.html#AEN196"
+>Position des onglets</A
+></DT
+><DT
+><A
+HREF="x174.html#AEN199"
+>Groupement automatique des Onglets</A
+></DT
+><DT
+><A
+HREF="x174.html#AEN220"
+>Onglets et thèmes</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>5. <A
+HREF="c223.html"
+>Affectation des touches</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c223.html#AEN225"
+>Le Keygrabber</A
+></DT
+><DT
+><A
+HREF="x246.html"
+>Noms des touches</A
+></DT
+><DT
+><A
+HREF="x276.html"
+>Actions</A
+></DT
+></DL
+></DD
+><DT
+>6. <A
+HREF="chap-bg.html"
+>Fond d'écrans</A
+></DT
+><DT
+>7. <A
+HREF="chap-slit.html"
+>Le Slit</A
+></DT
+><DT
+>8. <A
+HREF="c625.html"
+>Editer les Menus</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c625.html#AEN628"
+>Configurer l'emplacement du Fichier Menu</A
+></DT
+><DT
+><A
+HREF="x638.html"
+>Commandes Disponibles</A
+></DT
+></DL
+></DD
+><DT
+>9. <A
+HREF="chap-themes.html"
+>Thèmes</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="chap-themes.html#AEN652"
+>Bases des Thèmes</A
+></DT
+></DL
+></DD
+><DT
+>A. <A
+HREF="app-setup.html"
+>Configuration
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+>/<TT
+CLASS="FILENAME"
+>.xsession</TT
+></A
+></DT
+><DT
+>B. <A
+HREF="faq.html"
+>Frequently asked questions (FAQ)</A
+></DT
+><DT
+>C. <A
+HREF="app-artwiz.html"
+>Les fontes Artwiz pour Fluxbox</A
+></DT
+><DT
+>D. <A
+HREF="app-debugging.html"
+>Débuggage</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="LOT"
+><DL
+CLASS="LOT"
+><DT
+><B
+>List of Tables</B
+></DT
+><DT
+>5-1. <A
+HREF="x276.html#AEN278"
+>Navigation</A
+></DT
+><DT
+>5-2. <A
+HREF="x276.html#AEN328"
+>Opérations sur le fenêtres</A
+></DT
+><DT
+>5-3. <A
+HREF="x276.html#AEN372"
+>Dimensionnement des fenêtres</A
+></DT
+><DT
+>5-4. <A
+HREF="x276.html#AEN410"
+>Mouvement des fenêtres</A
+></DT
+><DT
+>5-5. <A
+HREF="x276.html#AEN454"
+>Autre</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="LOT"
+><DL
+CLASS="LOT"
+><DT
+><B
+>List of Examples</B
+></DT
+><DT
+>4-1. <A
+HREF="x174.html#AEN208"
+>Exemple des fichiers de groupement</A
+></DT
+><DT
+>5-1. <A
+HREF="c223.html#AEN232"
+>Un exemple de fichier "keys" de Fluxbox</A
+></DT
+><DT
+>5-2. <A
+HREF="c223.html#AEN238"
+>Affectation des touches pour XMMS</A
+></DT
+><DT
+>5-3. <A
+HREF="c223.html#AEN242"
+>Touches Multimédia pour XMMS</A
+></DT
+><DT
+>5-4. <A
+HREF="x246.html#AEN250"
+>Message de <TT
+CLASS="FILENAME"
+>xev</TT
+> pour la flèche droite</A
+></DT
+><DT
+>7-1. <A
+HREF="chap-slit.html#AEN621"
+>Spécification de la liste du slit</A
+></DT
+><DT
+>8-1. <A
+HREF="c625.html#AEN633"
+>Configuration de l'emplacement du fichier de menu</A
+></DT
+><DT
+>A-1. <A
+HREF="app-setup.html#AEN737"
+><TT
+CLASS="FILENAME"
+>.xinitrc</TT
+></A
+></DT
+><DT
+>B-1. <A
+HREF="faq.html#AEN861"
+>Améliorer les onglets dans un fichier de style</A
+></DT
+><DT
+>C-1. <A
+HREF="app-artwiz.html#AEN918"
+><TT
+CLASS="FILENAME"
+>fonts.dir</TT
+></A
+></DT
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c16.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Introduction</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

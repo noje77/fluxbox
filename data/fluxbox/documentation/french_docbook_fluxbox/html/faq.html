@@ -1,0 +1,790 @@
+<HTML
+><HEAD
+><TITLE
+>Frequently asked questions (FAQ)</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Configuration
+.xinitrc/.xsession"
+HREF="app-setup.html"><LINK
+REL="NEXT"
+TITLE="Les fontes Artwiz pour Fluxbox"
+HREF="app-artwiz.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="APPENDIX"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="app-setup.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="app-artwiz.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="FAQ"
+></A
+>Appendix B. Frequently asked questions (FAQ)</H1
+><DIV
+CLASS="QANDASET"
+><DL
+><DT
+>1. <A
+HREF="faq.html#AEN746"
+>Qu'est ce que le slit?</A
+></DT
+><DT
+>2. <A
+HREF="faq.html#AEN755"
+>Y'a-t-il un moyen de mettre les dockapps du slit dans un certain ordre?</A
+></DT
+><DT
+>3. <A
+HREF="faq.html#AEN761"
+>Comment changer le format de l'horloge de la barre des tâches?</A
+></DT
+><DT
+>4. <A
+HREF="faq.html#AEN769"
+>J'ai effectué des changements dans mon
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+>, mais ils ont été écrasés</A
+></DT
+><DT
+>5. <A
+HREF="faq.html#AEN775"
+>Comment les onglets fonctionnent ?</A
+></DT
+><DT
+>6. <A
+HREF="faq.html#AEN781"
+>J'entend beaucoup parler des fontes Artwiz! Qu'en est-il?</A
+></DT
+><DT
+>7. <A
+HREF="faq.html#AEN789"
+>Comment puis-je mettre une image de fond?</A
+></DT
+><DT
+>8. <A
+HREF="faq.html#AEN795"
+>Mon image de fond est remplacée par une autre image horrible quand je change de thème.</A
+></DT
+><DT
+>9. <A
+HREF="faq.html#AEN801"
+>Est-ce que je peux utiliser mon
+<TT
+CLASS="FILENAME"
+>.blackboxrc</TT
+> pour Fluxbox ?</A
+></DT
+><DT
+>10. <A
+HREF="faq.html#AEN809"
+>Comment puis je lancer des applications automatiquement au démarrage de Fluxbox ?</A
+></DT
+><DT
+>11. <A
+HREF="faq.html#AEN815"
+>Est-ce que je peux utiliser les styles de Blackbox (themes) avec Fluxbox ?</A
+></DT
+><DT
+>12. <A
+HREF="faq.html#QA-SESSION"
+>Comment dois je configurer mon
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+>/<TT
+CLASS="FILENAME"
+>.xsession</TT
+>?</A
+></DT
+><DT
+>13. <A
+HREF="faq.html#AEN828"
+>Qu'est ce que Waimea et Openbox?</A
+></DT
+><DT
+>14. <A
+HREF="faq.html#AEN835"
+>Y'a-t-il un support KDE ?</A
+></DT
+><DT
+>15. <A
+HREF="faq.html#AEN842"
+>Y'a-t-il un support GNOME ?</A
+></DT
+><DT
+>16. <A
+HREF="faq.html#AEN849"
+>BBtools n'utilise pas le style que j'ai fixé, même après un redémarrage</A
+></DT
+><DT
+>17. <A
+HREF="faq.html#AEN857"
+>Les onglets ont une allure horrible avec certains styles. Comment résoudre ce problème ?</A
+></DT
+><DT
+>18. <A
+HREF="faq.html#AEN868"
+>BBtools ne veut pas fonctionner avec v0.1.5</A
+></DT
+><DT
+>19. <A
+HREF="faq.html#AEN873"
+>Je n'arrive pas à compiler Fluxbox 0.1.4 avec gcc 3.0.x. Comment résoudre ce problème ?</A
+></DT
+></DL
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN746"
+></A
+><B
+>1. </B
+>Qu'est ce que le slit?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>La première chose que vous devez savoir à propos du slit est qu'il <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>ne</I
+></SPAN
+> s'agit <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>pas</I
+></SPAN
+> de la barre de tâche de Fluxbox. Si vous voyez quelqu'un qui dit le contraire, frappez-le avec quelque chose qui fait horriblement mal et amenez-le ici :)</P
+><P
+>Le Slit est l'endroit où les applications dockables peuvent se 'docker'. Nous avons un document entier dédié au slit : <A
+HREF="chap-slit.html"
+>Chapter 7</A
+>. Lisez le avant de poser des questions sur ce qu'est le slit.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN755"
+></A
+><B
+>2. </B
+>Y'a-t-il un moyen de mettre les dockapps du slit dans un certain ordre?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>A partir de la version 0.1.10, oui. Il y a une explication ici : <A
+HREF="chap-slit.html"
+>Chapter 7</A
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN761"
+></A
+><B
+>3. </B
+>Comment changer le format de l'horloge de la barre des tâches?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Changez cette ligne dans votre fichier init :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>session.screen0.strftimeFormat: %a %d %H:%M</PRE
+><P
+>Pour les informations concernant le format, exécutez <TT
+CLASS="USERINPUT"
+><B
+>'man 3 strftime'</B
+></TT
+> sur votre machine.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN769"
+></A
+><B
+>4. </B
+>J'ai effectué des changements dans mon
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+>, mais ils ont été écrasés</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>C'est un bug de Fluxbox dans les versions antérieures à 0.1.8-bugfix2. Prière d'upgrader à la dernière version / bugfix avant de reporter ceci comme un bug.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN775"
+></A
+><B
+>5. </B
+>Comment les onglets fonctionnent ?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Consultez <A
+HREF="chap-tabs.html"
+>Chapter 4</A
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN781"
+></A
+><B
+>6. </B
+>J'entend beaucoup parler des fontes Artwiz! Qu'en est-il?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Essayez de lire le <A
+HREF="app-artwiz.html"
+>Appendix C</A
+></P
+><P
+>Si vous aimez les fontes Artwiz, mais que vous n'aimez pas leur rendu dans les terminaux, vous devriez jetez un oeil au 'LFP' Fontpack, situé au <A
+HREF="http://dreamer.nitro.dk/linux/lfp/"
+TARGET="_top"
+>Linux
+Font Project</A
+>. Il y a deux jeux de fontes là, le LFP à taille fixe (bon pour les terminaux), et LFP à taille variable (bon pour les autres choses).
+Les fontes à taille fixe sont aussi disponibles pour la console Linux.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN789"
+></A
+><B
+>7. </B
+>Comment puis-je mettre une image de fond?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Essayez de lire le <A
+HREF="chap-bg.html"
+>Chapter 6</A
+></P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN795"
+></A
+><B
+>8. </B
+>Mon image de fond est remplacée par une autre image horrible quand je change de thème.</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Il existe une solution dans <A
+HREF="chap-bg.html"
+>Chapter 6</A
+></P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN801"
+></A
+><B
+>9. </B
+>Est-ce que je peux utiliser mon
+<TT
+CLASS="FILENAME"
+>.blackboxrc</TT
+> pour Fluxbox ?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Certainement, soyez cependant sur d'ajouter les lignes concernant la barre des titres (titlebar) et les touches (keygrabber). Il peut-être intéressant de lier symboliquement vos <TT
+CLASS="FILENAME"
+>blackboxrc</TT
+> et <TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+> ensemble.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN809"
+></A
+><B
+>10. </B
+>Comment puis je lancer des applications automatiquement au démarrage de Fluxbox ?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Voir <A
+HREF="faq.html#QA-SESSION"
+>Q: 12.</A
+></P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN815"
+></A
+><B
+>11. </B
+>Est-ce que je peux utiliser les styles de Blackbox (themes) avec Fluxbox ?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Oui. Les tarballs devraient être 100% interchangeables. Ceci devrait être vrai également pour les projets Openbox et Waimea, même si je ne peux le garantir. Je n'ai vu aucune promesse de la part des deux projets, mais un des buts de Fluxbox est de rester compatible avec les thèmes (styles) de Blackbox.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="QA-SESSION"
+></A
+><B
+>12. </B
+>Comment dois je configurer mon
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+>/<TT
+CLASS="FILENAME"
+>.xsession</TT
+>?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>See <A
+HREF="app-setup.html"
+>Appendix A</A
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN828"
+></A
+><B
+>13. </B
+>Qu'est ce que Waimea et Openbox?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Il y a deux autres "forks" du code de Blackbox (Pour être parfaitement précis, le seul code de BB que Waimea utilise est le moteur des Styles et du Rendu, mais cela veut dire que les styles devraient être compatibles, au moins). Openbox est présent à <A
+HREF="http://icculus.org/openbox/"
+TARGET="_top"
+>http://icculus.org/openbox/</A
+>,
+Waimea peut être obtenu à <A
+HREF="http://waimea.sourceforge.net/"
+TARGET="_top"
+>http://waimea.sourceforge.net/</A
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN835"
+></A
+><B
+>14. </B
+>Y'a-t-il un support KDE ?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Oui, faites <TT
+CLASS="FILENAME"
+>configure</TT
+> avec l'option
+<TT
+CLASS="USERINPUT"
+><B
+>--enable-kde</B
+></TT
+>. Cela aura pour effet de mettre les icônes KDE dans le slit.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN842"
+></A
+><B
+>15. </B
+>Y'a-t-il un support GNOME ?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>oui, faites <TT
+CLASS="FILENAME"
+>configure</TT
+> avec l'option
+<TT
+CLASS="USERINPUT"
+><B
+>--enable-gnome</B
+></TT
+>. Cela enclenchera les hints Gnome.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN849"
+></A
+><B
+>16. </B
+>BBtools n'utilise pas le style que j'ai fixé, même après un redémarrage</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Liez votre <TT
+CLASS="FILENAME"
+>~/.blackboxrc</TT
+> à votre <TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+>, par exemple avec cette commande :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ ln -s ~/.fluxbox/init ~./blackboxrc</PRE
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN857"
+></A
+><B
+>17. </B
+>Les onglets ont une allure horrible avec certains styles. Comment résoudre ce problème ?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Pour utiliser la belle apparence des onglets de fluxbox et les rendre (encore plus) beaux, vous aurez besoin d'autres entrées dans votre fichier de style (/theme)...  Cependant, notez que vous n'avez pas spécialement besoin de le faire, fluxbox étant parfaitement capable de mettre les bons couleurs/styles de lui-même; mais si vous voulez avoir plus de contrôle sur leur apparence, vous pouvez ajouter des lignes de ce genre:</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN861"
+></A
+><P
+><B
+>Example B-1. Améliorer les onglets dans un fichier de style</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    ! -- tab style (for fluxbox)
+    window.tab.justify:                     Right
+    window.tab.label.unfocus:               Flat Solid
+    window.tab.label.unfocus.color:         rgb:AC/AC/AC
+    window.tab.label.unfocus.textColor:     black
+    window.tab.label.focus:                 Raised Solid
+    window.tab.label.focus.color:           rgb:CC/CC/CC
+    window.tab.label.focus.textColor:       black
+    window.tab.borderWidth:                 1
+    window.tab.borderColor:                 rgb:10/10/10
+    window.tab.font:                        fixed
+    ! --- end, tab style</PRE
+></DIV
+><P
+>Ok, mais qu'est-ce que tout cela provoque ?
+Et bien, de la même manière que toutes les autres choses composant un thème, je suis sûr que vous le devinerez si vous avez déjà réalisé un thème pour blackbox auparavant (si vous ne l'avez jamais fait, lisez <A
+HREF="chap-themes.html"
+>Chapter 9</A
+>) </P
+><P
+>Notez encore que les styles contenant ces entrées en plus continueront de fonctionner parfaitement avec blackbox, donc vous ne perdez rien en ajoutant ces fonctionnalités!</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN868"
+></A
+><B
+>18. </B
+>BBtools ne veut pas fonctionner avec v0.1.5</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Upgradez au moins à la version 0.1.8, et au mieux à la dernière version.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN873"
+></A
+><B
+>19. </B
+>Je n'arrive pas à compiler Fluxbox 0.1.4 avec gcc 3.0.x. Comment résoudre ce problème ?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Il existe un patch à <A
+HREF="http://fluxbox.sourceforge.net/"
+TARGET="_top"
+>http://fluxbox.sourceforge.net/</A
+>, mais un upgrade à la dernière version est fortement recommandé.</P
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="app-setup.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="app-artwiz.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Configuration
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+>/<TT
+CLASS="FILENAME"
+>.xsession</TT
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Les fontes Artwiz pour Fluxbox</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

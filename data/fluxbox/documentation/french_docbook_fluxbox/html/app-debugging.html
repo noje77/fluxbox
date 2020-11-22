@@ -1,0 +1,266 @@
+<HTML
+><HEAD
+><TITLE
+>Débuggage</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Les fontes Artwiz pour Fluxbox"
+HREF="app-artwiz.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="APPENDIX"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="app-artwiz.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="APP-DEBUGGING"
+></A
+>Appendix D. Débuggage</H1
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN934"
+></A
+>Information générale</H2
+><P
+>Le débuggage est une compétence que vous pouvez apprendre. Il existe assez peu de bons documents qui décrivent comment effectuer un bon rapport de bug.
+Nous vous en prions lisez les avant de rentrer dans l'arène, ainsi votre bug ne s'enfuiera pas et ne vous massacrera pas. Nous préferons plutôt éliminer le bug et nous voulons votre aide :-) Donc rendons nous à la bataille bien préparé. Deux bons documents sont <A
+HREF="http://www.mozilla.org/quality/bug-writing-guidelines.html"
+TARGET="_top"
+>Howto du rapport de bug Bugzilla (Bugzilla
+Bug Reporting HOWTO) </A
+> et <A
+HREF="http://www.chiark.greenend.org.uk/~sgtatham/bugs.html"
+TARGET="_top"
+> Comment rapporter les bugs efficacement (How to
+Report Bugs Effectively)</A
+> par Simon Tathams.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN938"
+></A
+>Informations spécifiques à Fluxbox</H2
+><H3
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN939"
+></A
+>Messages textes de Fluxbox</H3
+><P
+>Comme toutes autres applications, Fluxbox envoie tout les messages sur la console où il a été démarré. Le problème est que dans des circonstances normales tout les messages vont sur la console <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>text</I
+></SPAN
+>. Changez la ligne de démarrage de Fluxbox par <TT
+CLASS="USERINPUT"
+><B
+>exec
+xterm</B
+></TT
+> ou par votre favori emulateur de terminal. Démarrez Fluxbox dans cet xterm, et vous pourrez facilement voir tout les messages provenant de Fluxbox.</P
+><H3
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN943"
+></A
+>Les information que nous voulons</H3
+><P
+>Nous voulons connaitre beaucoup de choses. Soyez sûr de tout savoir à leurs propos.</P
+><P
+></P
+><UL
+><LI
+><P
+>Votre OS / distribution et sa version.</P
+></LI
+><LI
+><P
+>La version de Fluxbox, si il s'agit d'une CVS (ou d'un tarball de developpement) alors de quel jour ?</P
+></LI
+><LI
+><P
+>Quand cela se produit t'il ? Avez vous fait quelque chose ? Pouvez vous le reproduire ?</P
+></LI
+><LI
+><P
+>Vos réglages. Ils peuvent être trouvés dans <TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+></P
+></LI
+></UL
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN955"
+></A
+>Que faire avec les core-dumps.</H2
+><P
+>Si jamais vous avez un core dumping de fluxbox que vous avez récupéré sur le CVS, faites la chose suivante : allez sur le channel #fluxbox sur OPN et dites à fluxgen que vous avez un coredump. Donnez-lui toutes les informations qu'il vous demande. Il vous demandera aussi de faire ce qui suit. C'est quand même beaucoup de travail mais n'importe qui avec un peu de bon sens et une petite expérience d'Unix peut le faire. Ah, et vous aurez besoin du débuggeur de GNU, appelé <TT
+CLASS="FILENAME"
+>gdb</TT
+>.</P
+><H3
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN958"
+></A
+>Recompilez Fluxbox</H3
+><P
+>Oui vous avez bien lu. Pour devenir un vrai traqueur de bug, vous devez recompiler Fluxbox avec les symboles de débuggage.</P
+><P
+>Compilez fluxbox comme d'habitude et ajoutez les options suivantes quand vous faites le make :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ CFLAGS=-Wall -g3 CXXFLAGS=-Wall -g3 make</PRE
+><P
+>Si vous utilisez les RPMS source du site de fluxbox ou de votre distribution vous devez faire ceci :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ su
+    # rpm -ivh fluxbox-0.1.11.1mdk.src.rpm
+    # cd /usr/src/RPM/SPECS
+    # env DEBUG=true rpm -ba fluxbox.spec
+    # rpm -Uvh --force /usr/src/RPM/RPMS/i686/fluxbox*
+    # exit
+    $ mkdir -p ~/src/fluxbox
+    $ cp -R /usr/src/RPM/BUILD/fluxbox* ~/src/fluxbox</PRE
+><P
+>Rendez vous dans le répertoire de Fluxbox (Comme cela nous avons le core dump au bon endroit). Le shell a une option très utile qui permet de désenclencher les fichiers core. Vérifiez que vous avez vraiment un fichier core avec : </P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ ulimit -c unlimited</PRE
+><P
+>Démarrez X et commençons le débuggage. Faites ce qu'il est nécessaire afin d'obtenir un core dump de Fluxbox. Et maintenant démarrons le débuggage : </P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ gdb fluxbox core</PRE
+><P
+>Puis tapez cette commande dans gdb (la première partie est le promt de gdb, ne l'inscrivez pas :)) :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    (gdb) where</PRE
+><P
+>Maintenant vous avez pleins de messages. Fluxgen voudrait connaître tous les messages commençant par un <TT
+CLASS="COMPUTEROUTPUT"
+>#</TT
+>.</P
+><P
+>Maintenant, copier cela dans un e-mail en envoyez le tout à fluxgen et attachez aussi les quatre fichiers de configuration qui se trouvent dans <TT
+CLASS="FILENAME"
+>~/.fluxbox</TT
+>.</P
+><P
+>Ne supprimez pas encore le fichier core et le répertoire des sources. Fluxgen pourrait vous poser d'autres questions et vous en auriez besoin. N'envoyez pas le fichier core à fluxgen si il ne vous l'a pas demandé  - si le problème est spécifique à votre système, il sera probablement inutile pour lui et les fichiers core sont assez volumineux.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="app-artwiz.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Les fontes Artwiz pour Fluxbox</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Getting started</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="About Fluxbox"
+HREF="x47.html"><LINK
+REL="NEXT"
+TITLE="Commandline options"
+HREF="x154.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x47.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x154.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="AEN92"
+></A
+>Chapter 2. Getting started</H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="c92.html#AEN94"
+>Installing Fluxbox</A
+></DT
+><DT
+><A
+HREF="x154.html"
+>Commandline options</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN94"
+>Installing Fluxbox</A
+></H1
+><P
+>This section was contributed by Jason Gillman Jr. aka
+"Ircaddict".</P
+><P
+>Many distributions provide binary packages of Fluxbox (or,
+in the case of Gentoo and FreeBSD, ports/ebuilds) which make
+installing Fluxbox pretty painless. There are reasons to compile
+from source, however. For example, the most recent version of
+Fluxbox might not be available as a distribution package.
+Additionally, it might be desirable to compile Fluxbox with a
+certain set of compiler flags.  If you would like to use your
+distributions packages, consult the distribution docs. For some
+distributions, both source and binary packages are provided on the
+Fluxbox site.</P
+><P
+>The purpose of this document is to help people who are
+fairly new to the X11 windowing system (or Linux in general) compile
+and install the Fluxbox window manager.</P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN99"
+>Acquiring the sources</A
+></H2
+><P
+>The first thing that you will want to do is go to the
+<A
+HREF="http://fluxbox.sourceforge.net/download.php"
+TARGET="_top"
+>download
+page</A
+> and download the source tarball (the extension will be
+.tar.gz). </P
+><P
+>From time to time, special developer releases are made.
+Those allow a preview of things to come, new features and the
+like. Due to their developer-release quality, they sometimes lack
+functionality or stability. Try them if you want bleeding edge
+Fluxbox - with all the benefits and dangers. Directions on how to
+fetch the can be found in the News section of the official
+Fluxbox site.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN104"
+>Extract and compile</A
+></H2
+><P
+>Okay, now that you have the source tarball, you have to
+extract the goods. This can be done by running the following
+command, replacing the filename with the one of the file you
+downloaded:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ tar xzvf fluxbox-0.1.12.tar.gz</PRE
+><P
+>It will then throw out a list of the files that are being
+un-archived. After you do this, change into the directory that was
+created (it will be something like
+<TT
+CLASS="FILENAME"
+>fluxbox-0.1.12/</TT
+>, but it depends on the
+version). The next step is to configure and make Fluxbox.
+During the configure run, you can enable or disable some features
+in Fluxbox. For most people, the defaults should be okay. If you
+want Fluxbox' slit to work with KDE panel icons, you would add
+the option <KBD
+CLASS="USERINPUT"
+>--enable-kde</KBD
+>. To find out what
+other options are provided by the configure script, use the option
+<KBD
+CLASS="USERINPUT"
+>--help</KBD
+>.  If you don't want to enable KDE,
+this should suffice:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ ./configure
+    $ make</PRE
+><P
+>After Fluxbox is compiled, become root and run:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    # make install</PRE
+><P
+>Congratulations, you now have compiled and installed
+Fluxbox.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN116"
+>Running Fluxbox</A
+></H2
+><P
+>It's all nice and good if you have it installed, but what
+use is it if you can't run it?</P
+><P
+>There are two generally different ways to start X11 (and thus
+Fluxbox). The traditional way is using the command
+<TT
+CLASS="FILENAME"
+>startx</TT
+>. The other way is using a graphical
+login manager (also called "display manager"). The most common
+display manager is <TT
+CLASS="FILENAME"
+>xdm</TT
+> which is part of the
+XFree86 distribution. The display manager provided by Gnome is
+called <TT
+CLASS="FILENAME"
+>gdm</TT
+>, the one from KDE is
+<TT
+CLASS="FILENAME"
+>kdm</TT
+>.</P
+><P
+>If X11 is started the former way (via
+<TT
+CLASS="FILENAME"
+>startx</TT
+>), the file that is important is called
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> and resides in your home directory.
+In the case of starting via a display manager, the file is
+<TT
+CLASS="FILENAME"
+>.xsession</TT
+> which resides at the same
+location.</P
+><P
+>The next step is to find the executable for Fluxbox. For
+most people, this is <TT
+CLASS="FILENAME"
+>/usr/local/bin/fluxbox</TT
+>.
+Now you need to edit (or create) the file I just mentioned. 
+Just put the following line at the bottom of the file:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>   exec /usr/local/bin/fluxbox</PRE
+><P
+>Change the <TT
+CLASS="FILENAME"
+>/usr/local/bin/fluxbox</TT
+> to
+where ever your Fluxbox executable is, the above is the default
+location when compiling from source. Once that is done, save it
+and close whatever editor you used to edit it. Now you need to run
+the following command if you use
+<TT
+CLASS="FILENAME"
+>startx</TT
+>:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>   $ chmod 700 .xinitrc</PRE
+><P
+>In the case of <TT
+CLASS="FILENAME"
+>.xsession</TT
+> that is not
+needed. In both cases, you should create the directory in which
+Fluxbox stores its configuration:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>   $ mkdir .fluxbox</PRE
+><P
+> If you don't create it, when you exit Fluxbox and restart,
+you will lose all your setting.</P
+><P
+> Maybe copy <TT
+CLASS="FILENAME"
+>init</TT
+> and <TT
+CLASS="FILENAME"
+>menu</TT
+>
+files from the <TT
+CLASS="FILENAME"
+>/usr/local/share/fluxbox</TT
+> directory 
+to the <TT
+CLASS="FILENAME"
+>.fluxbox/</TT
+> directory in your home directory.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN144"
+>Adding to KDE Displaymanager</A
+></H2
+><P
+>To get Flux on the KDM menu store </P
+><PRE
+CLASS="PROGRAMLISTING"
+>[Desktop Entry]
+Encoding=UTF-8
+Type=XSession
+Exec=/usr/local/bin/fluxbox
+TryExec=/usr/local/bin/fluxbox
+Name=Fluxbox</PRE
+><P
+>into the file <TT
+CLASS="FILENAME"
+>/usr/share/apps/kdm/sessions/09fluxbox.desktop</TT
+>.</P
+><P
+>The file location is for Mandirva and might be different on other systems
+mabye look for <TT
+CLASS="FILENAME"
+>/etc/kdm</TT
+> on others.</P
+><P
+>The numberprefix <TT
+CLASS="FILENAME"
+>09</TT
+> might have to do with the
+position in the session selection.</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x47.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x154.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>About Fluxbox</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Commandline options</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

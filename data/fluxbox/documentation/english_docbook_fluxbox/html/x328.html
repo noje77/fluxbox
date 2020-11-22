@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Key Names</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Key Bindings"
+HREF="c296.html"><LINK
+REL="PREVIOUS"
+TITLE="Key Bindings"
+HREF="c296.html"><LINK
+REL="NEXT"
+TITLE="Actions"
+HREF="x359.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c296.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 5. Key Bindings</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x359.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN328"
+>Key Names</A
+></H1
+><P
+>You probably ask yourself how to find out key names. Run
+<TT
+CLASS="FILENAME"
+>xev</TT
+>, move your mouse to the newly
+created window and press a key and see what it says about it. Here
+is the example after pressing the Right Arrow key:</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN332"
+></A
+><P
+><B
+>Example 5-5. <TT
+CLASS="FILENAME"
+>xev</TT
+> output for the
+right arrow key</B
+></P
+><PRE
+CLASS="SCREEN"
+>    KeyPress event, serial 18, synthetic NO, window 0x2c00001,
+    root 0x60, subw 0x0, time 3745737930, (373,380), root:(504,526),
+    state 0x10, keycode 102 (keysym 0xff53, Right), same_screen YES,
+    XLookupString gives 0 characters:  ""</PRE
+></DIV
+><P
+>The interesting bit is the key name, which is what's inside
+the parentheses together with the
+<SAMP
+CLASS="COMPUTEROUTPUT"
+>keysym</SAMP
+>. In this example, that
+reads <SAMP
+CLASS="COMPUTEROUTPUT"
+>(keysym 0xff53, Right)</SAMP
+>.
+Thus, the name for the key is
+<SAMP
+CLASS="COMPUTEROUTPUT"
+>Right</SAMP
+>.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN340"
+></A
+>Special Keys</H2
+><P
+>Here are some special keys for your convenience. Note that
+they will be displayed by <TT
+CLASS="FILENAME"
+>xev</TT
+>
+immediately after you press them (not as modifiers to other
+keys).</P
+><DIV
+CLASS="INFORMALTABLE"
+><P
+></P
+><A
+NAME="AEN343"
+></A
+><TABLE
+BORDER="0"
+FRAME="void"
+CLASS="CALSTABLE"
+><COL><COL><THEAD
+><TR
+><TH
+>Key</TH
+><TH
+>X11 Name</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+>Control, Strg</TD
+><TD
+>Control</TD
+></TR
+><TR
+><TD
+>Alt</TD
+><TD
+>Mod1</TD
+></TR
+><TR
+><TD
+>Super, Meta, Win* Keys</TD
+><TD
+>Mod4</TD
+></TR
+></TBODY
+></TABLE
+><P
+></P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c296.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x359.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Key Bindings</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c296.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Actions</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

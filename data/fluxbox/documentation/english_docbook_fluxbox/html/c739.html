@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Editing Menus</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="The Toolbar"
+HREF="chap-toolbar.html"><LINK
+REL="NEXT"
+TITLE="Available Commands"
+HREF="x756.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="chap-toolbar.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x756.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="AEN739"
+></A
+>Chapter 9. Editing Menus</H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="c739.html#AEN746"
+>Setting the Menu File Location</A
+></DT
+><DT
+><A
+HREF="x756.html"
+>Available Commands</A
+></DT
+></DL
+></DIV
+><P
+>So you have Fluxbox installed and now you see that nifty
+little application launcher called the menu when you right click
+your desktop. This is of little use if you can't edit it to launch
+the applications that you use. This doc will attempt to answer all
+questions regarding this.</P
+><P
+>First off, there is a nice utility shipped with Fluxbox,
+called <TT
+CLASS="FILENAME"
+>fluxbox-generate_menu</TT
+>. It tries to
+glean the paths of various commonly installed programs such as
+browsers and terminal emulators from your environment and creates
+a menu file. <TT
+CLASS="FILENAME"
+>fluxbox-generate_menu</TT
+> is covered
+in detail in <A
+HREF="sect-fbgm.html"
+>the Section called <I
+>fluxbox-generate_menu</I
+> in Chapter 3</A
+>.</P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN746"
+>Setting the Menu File Location</A
+></H1
+><P
+>The Fluxbox menu is by default
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/menu</TT
+>. This setting can be
+changed, however, via your <TT
+CLASS="FILENAME"
+>init</TT
+> file. Here is
+an example of the line:</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN751"
+></A
+><P
+><B
+>Example 9-1. Setting the menu file</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    session.menuFile:       ~/.fluxbox/menu</PRE
+></DIV
+><P
+>Just change the <TT
+CLASS="FILENAME"
+>~/.fluxbox/menu</TT
+> if
+you wish to use a different file for your menu. The current
+structure, however, should be fine for most people.</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="chap-toolbar.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x756.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The Toolbar</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Available Commands</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

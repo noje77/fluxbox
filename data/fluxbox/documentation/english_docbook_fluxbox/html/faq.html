@@ -1,0 +1,894 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Frequently asked questions (FAQ)</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Setting up
+.xinitrc/.xsession"
+HREF="app-setup.html"><LINK
+REL="NEXT"
+TITLE="Theme Reference"
+HREF="app-themeref.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="APPENDIX"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="app-setup.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="app-themeref.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="FAQ"
+></A
+>Appendix B. Frequently asked questions (FAQ)</H1
+><DIV
+CLASS="QANDASET"
+><DL
+><DT
+>1. <A
+HREF="faq.html#AEN969"
+>What is the Slit?</A
+></DT
+><DT
+>2. <A
+HREF="faq.html#AEN977"
+>Is there a way to have Slit dockapps be in a certain order?</A
+></DT
+><DT
+>3. <A
+HREF="faq.html#AEN983"
+>How do I change the toolbar Time format?</A
+></DT
+><DT
+>4. <A
+HREF="faq.html#AEN992"
+>I make changes to my
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+>, but they are getting overwritten.</A
+></DT
+><DT
+>5. <A
+HREF="faq.html#AEN998"
+>How do tabs work?</A
+></DT
+><DT
+>6. <A
+HREF="faq.html#AEN1004"
+>It seems that I can't use the old fonts like Snap with AA...
+What's the deal?</A
+></DT
+><DT
+>7. <A
+HREF="faq.html#AEN1028"
+>I keep hearing about these Artwiz fonts. What
+gives?</A
+></DT
+><DT
+>8. <A
+HREF="faq.html#AEN1036"
+>How do I set my background?</A
+></DT
+><DT
+>9. <A
+HREF="faq.html#AEN1042"
+>My background changes to an ugly one when I change themes.</A
+></DT
+><DT
+>10. <A
+HREF="faq.html#AEN1048"
+>Can I use my existing
+<TT
+CLASS="FILENAME"
+>.blackboxrc</TT
+> for Fluxbox?</A
+></DT
+><DT
+>11. <A
+HREF="faq.html#AEN1056"
+>How do i launch apps automatically on Fluxbox startup?</A
+></DT
+><DT
+>12. <A
+HREF="faq.html#AEN1063"
+>Can I use Blackbox styles (themes) with Fluxbox?</A
+></DT
+><DT
+>13. <A
+HREF="faq.html#QA-SESSION"
+>How do I set up my
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+>/<TT
+CLASS="FILENAME"
+>.xsession</TT
+>?</A
+></DT
+><DT
+>14. <A
+HREF="faq.html#AEN1076"
+>Is there KDE support?</A
+></DT
+><DT
+>15. <A
+HREF="faq.html#AEN1083"
+>Is there Gnome support?</A
+></DT
+><DT
+>16. <A
+HREF="faq.html#AEN1090"
+>BBtools don't use my current style settings, even after restart.</A
+></DT
+><DT
+>17. <A
+HREF="faq.html#AEN1098"
+>The tabs look ugly with some styles, how to fix it?</A
+></DT
+><DT
+>18. <A
+HREF="faq.html#AEN1111"
+>How do I put icons on Fluxbox' desktop?</A
+></DT
+><DT
+>19. <A
+HREF="faq.html#AEN1121"
+>Fluxbox 0.9.6 is slow...</A
+></DT
+></DL
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN969"
+></A
+><B
+>1. </B
+>What is the Slit?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>The first thing to know about the Slit is that it is
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>not</I
+></SPAN
+> the Fluxbox taskbar.</P
+><P
+>The Slit is a place where dockable applications can 'dock'.
+We have an entire chapter devoted to the Slit: <A
+HREF="chap-slit.html"
+>Chapter 7</A
+>. Read it before asking any questions 
+about what the slit is and how it works.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN977"
+></A
+><B
+>2. </B
+>Is there a way to have Slit dockapps be in a certain order?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>In Fluxbox versions after 0.1.10, yes. There's an
+explanation in <A
+HREF="chap-slit.html"
+>Chapter 7</A
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN983"
+></A
+><B
+>3. </B
+>How do I change the toolbar Time format?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Change this line in your <TT
+CLASS="FILENAME"
+>init</TT
+>:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>session.screen0.strftimeFormat: %a %d %H:%M</PRE
+><P
+>For information on the format, run <KBD
+CLASS="USERINPUT"
+>man 3
+strftime</KBD
+> on your machine.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN992"
+></A
+><B
+>4. </B
+>I make changes to my
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+>, but they are getting overwritten.</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>This is a bug in versions of Fluxbox prior to 0.1.8-bugfix2.
+Please upgrade to the latest version / bugfix before reporting
+this.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN998"
+></A
+><B
+>5. </B
+>How do tabs work?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>See <A
+HREF="chap-tabs.html"
+>Chapter 4</A
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1004"
+></A
+><B
+>6. </B
+>It seems that I can't use the old fonts like Snap with AA...
+What's the deal?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>As soon as you activate AA with Fluxbox, it relies on
+Freetype2 to render the characters. If you don't use AA, X11s
+native font rendering can be used. As FT2 does
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>not</I
+></SPAN
+> support all the formats that X11
+supports, the choice of fonts for Fluxbox becomes limited. As of
+this writing, FT2 supports the following formats:</P
+><P
+></P
+><UL
+><LI
+><P
+>TrueType files (.ttf) and collections (.ttc)</P
+></LI
+><LI
+><P
+>Type 1 font files both in ASCII (.pfa) or binary (.pfb) format</P
+></LI
+><LI
+><P
+>Type 1 Multiple Master fonts</P
+></LI
+><LI
+><P
+>Type 1 CID-keyed fonts</P
+></LI
+><LI
+><P
+>OpenType/CFF (.otf) fonts</P
+></LI
+><LI
+><P
+>CFF/Type 2 fonts</P
+></LI
+><LI
+><P
+>Adobe CEF fonts (.cef)</P
+></LI
+><LI
+><P
+>Windows FNT/FON bitmap fonts</P
+></LI
+></UL
+><P
+>Freetype 1, on the other hand, does only support TrueType
+fonts, although support for GX and OTF fonts can be enabled by
+using another library. Details can be found on the Freetype
+homepage.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1028"
+></A
+><B
+>7. </B
+>I keep hearing about these Artwiz fonts. What
+gives?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>There is an explanation in <A
+HREF="app-artwiz.html"
+>Appendix D</A
+></P
+><P
+>If you like the Artwiz fonts, but don't like the way they
+look in terminals, consider checking out the LFP fontpack, from
+the <A
+HREF="http://dreamer.nitro.dk/linux/lfp/"
+TARGET="_top"
+>Linux Font
+Project</A
+>. There are two sets of fonts there, The LFP
+Fixed-Width Fonts (good for terminals), and LFP Variable-Width
+Fonts (good for other things). The fixed-width fonts are also
+available for the Linux console.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1036"
+></A
+><B
+>8. </B
+>How do I set my background?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>This is explained in <A
+HREF="chap-bg.html"
+>Chapter 6</A
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1042"
+></A
+><B
+>9. </B
+>My background changes to an ugly one when I change themes.</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>There is a solution in <A
+HREF="chap-bg.html"
+>Chapter 6</A
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1048"
+></A
+><B
+>10. </B
+>Can I use my existing
+<TT
+CLASS="FILENAME"
+>.blackboxrc</TT
+> for Fluxbox?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>You may certainly, be sure to add some lines for
+titlebar and keygrabbing, though. It may also be wise to symlink
+your <TT
+CLASS="FILENAME"
+>blackboxrc</TT
+> and
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+> together somehow.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1056"
+></A
+><B
+>11. </B
+>How do i launch apps automatically on Fluxbox startup?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+></P
+><P
+>See <A
+HREF="app-setup.html"
+>Appendix A</A
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1063"
+></A
+><B
+>12. </B
+>Can I use Blackbox styles (themes) with Fluxbox?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Yes. The tarballs for both packages should be 100%
+interchangeable. This should also stay true for the Waimea and
+Openbox projects, although I can't guarantee it. I've not seen
+such a promise from either of the two projects, but one of the
+goals of Fluxbox is to stay compatible with Blackbox
+styles.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="QA-SESSION"
+></A
+><B
+>13. </B
+>How do I set up my
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+>/<TT
+CLASS="FILENAME"
+>.xsession</TT
+>?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>See <A
+HREF="app-setup.html"
+>Appendix A</A
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1076"
+></A
+><B
+>14. </B
+>Is there KDE support?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Yeah, use the <TT
+CLASS="FILENAME"
+>configure</TT
+> option
+<KBD
+CLASS="USERINPUT"
+>--enable-kde</KBD
+>. This ensures that KDE 
+tray icons will appear in the slit. </P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1083"
+></A
+><B
+>15. </B
+>Is there Gnome support?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Yeah, use the <TT
+CLASS="FILENAME"
+>configure</TT
+> option
+<KBD
+CLASS="USERINPUT"
+>--enable-gnome</KBD
+>. This enables the Gnome hints.
+In Fluxbox versions 0.1.12 and later this is the default.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1090"
+></A
+><B
+>16. </B
+>BBtools don't use my current style settings, even after restart.</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Simply link your <TT
+CLASS="FILENAME"
+>~/.blackboxrc</TT
+> to your
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+>, for example with this command:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ ln -s ~/.fluxbox/init ~/.blackboxrc</PRE
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1098"
+></A
+><B
+>17. </B
+>The tabs look ugly with some styles, how to fix it?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>0.1.14 or preceeding versions.</I
+></SPAN
+></P
+><P
+>To make the tabs look (even more) pretty you'll need to add
+some extra entries to your desired style (theme). However, note
+that you don't have to do this, Fluxbox is very capable of setting
+the tabs to a proper color/style by itself, but if you want to
+have more control of how they look, you might want to add a few
+lines like this:</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN1104"
+></A
+><P
+><B
+>Example B-1. Customized tabs in style file</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    ! -- tab style (for Fluxbox)
+    window.tab.justify:                     Right
+    window.tab.label.unfocus:               Flat Solid
+    window.tab.label.unfocus.color:         rgb:AC/AC/AC
+    window.tab.label.unfocus.textColor:     black
+    window.tab.label.focus:                 Raised Solid
+    window.tab.label.focus.color:           rgb:CC/CC/CC
+    window.tab.label.focus.textColor:       black
+    window.tab.borderWidth:                 1
+    window.tab.borderColor:                 rgb:10/10/10
+    window.tab.font:                        fixed
+    ! --- end, tab style</PRE
+></DIV
+><P
+>Okay, so what does all this do then? Well the same stuff as
+any other thing in a theme, I'm sure you get it if you have ever
+made a Blackbox theme before (<A
+HREF="chap-themes.html"
+>Chapter 10</A
+> might
+be interesting if you haven't).</P
+><P
+>Also note that a style containing these extra entries will
+still work perfectly in Blackbox, so you loose nothing by adding
+this.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1111"
+></A
+><B
+>18. </B
+>How do I put icons on Fluxbox' desktop?</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Fluxbox has its own companion program for this kind of
+functionality, it is called <A
+HREF="http://fluxbox.sourceforge.net/fbdesk"
+TARGET="_top"
+>fbdesk</A
+>. 
+<TT
+CLASS="FILENAME"
+>fbdesk</TT
+> is currently not packaged with fluxbox.
+
+There are also alternatives: the RoxFiler project, 
+<A
+HREF="http://idesk.timmfin.net"
+TARGET="_top"
+>idesk</A
+>,
+<A
+HREF="http://garuda.newmail.ru/xtdesk_e.dhtml"
+TARGET="_top"
+>xdesk</A
+>.</P
+><P
+></P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><A
+NAME="AEN1121"
+></A
+><B
+>19. </B
+>Fluxbox 0.9.6 is slow...</P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+> </B
+>Add the following line to your .xinitrc before you exec fluxbox:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>export LC_ALL=C</PRE
+><P
+>should help on newer RedHats.</P
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="app-setup.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="app-themeref.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Setting up
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+>/<TT
+CLASS="FILENAME"
+>.xsession</TT
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Theme Reference</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

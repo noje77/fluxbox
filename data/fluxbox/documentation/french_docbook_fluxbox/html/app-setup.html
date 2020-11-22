@@ -1,0 +1,341 @@
+<HTML
+><HEAD
+><TITLE
+>Configuration
+.xinitrc/.xsession</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Thèmes"
+HREF="chap-themes.html"><LINK
+REL="NEXT"
+TITLE="Frequently asked questions (FAQ)"
+HREF="faq.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="APPENDIX"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="chap-themes.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="faq.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="APP-SETUP"
+></A
+>Appendix A. Configuration
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+>/<TT
+CLASS="FILENAME"
+>.xsession</TT
+></H1
+><P
+>Contribution de Verin</P
+><H4
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN694"
+></A
+>L'utilité de .xinit</H4
+><P
+>Vous devez comprendre qu'un gestionnaire de fenêtres n'est qu'une autre application pour X comme <TT
+CLASS="FILENAME"
+>netscape</TT
+> ou
+<TT
+CLASS="FILENAME"
+>gimp</TT
+> ou
+<TT
+CLASS="FILENAME"
+>xterm</TT
+>. De nombreuses personnes novices à X pensent que X exécute un gestionnaire de fenêtres et que le gestionnaire de fenêtres exécute les programmes. Mais cela est faux. Si la configuration est bonne, vous pouvez exécuter toutes vos application sous X, tuer le gestionnaire de fenêtres et redémarrer un nouveau gestionnaire de fenêtres.</P
+><P
+>Le <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>véritable</I
+></SPAN
+> programme que X exécute, et qui exécute d'autres programmes, est votre script <TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> ou <TT
+CLASS="FILENAME"
+>.xsession</TT
+>. Quand X est démarré, votre script <TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> ou <TT
+CLASS="FILENAME"
+>.xsession</TT
+> est exécuté, et quand le script est fait, X se termine. Laissez moi répéter cela car c'est important: <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>quand <TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> est fini, cela signifie que X se termine</I
+></SPAN
+>. Ce n'est pas quand vous sortez de votre gestionnaire de fenêtres.</P
+><H4
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN707"
+></A
+>Syntaxe du script</H4
+><P
+>Bien, premièrement vous devez savoir quelque chose que vous connaissez sans doute déjà. Quand vous tapez une commande dans un shell, vous ne pouvez pas faire autre chose jusqu'à ce que la commande soit finie. Votre script <TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> ou <TT
+CLASS="FILENAME"
+>.xsession</TT
+> se comporte de la même manière. Quand ce script démarre, si il comporte un programme qui prend du temps pour s'exécuter (comme la plupart de programmes X), il s'arrète jusqu'à ce que ce programme soit terminé.</P
+><P
+>Idéalement, vous devez avoir un seul endroit ou le script "bloque". Et couramment, vous désirez que cela arrive à la fin du script. Ainsi, si vous avez des programmes que vous voulez exécuter sous X avant d'avoir ce "blocage", vous devez les mettre en fond. Vous mettez un <TT
+CLASS="USERINPUT"
+><B
+>&amp;</B
+></TT
+> à la fin de la ligne. Ainsi, si vous voulez que <TT
+CLASS="FILENAME"
+>xclock</TT
+> s'exécute en addition à d'autres choses, ajoutez cette ligne avant le "blocage" :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>	xclock &amp;</PRE
+><P
+>Maintenant, la prochaine commande que nous verrons est <TT
+CLASS="USERINPUT"
+><B
+>exec</B
+></TT
+>, qui est recommandé par de nombreuses source pour ajouter votre gestionnaire de fenêtres à votre script. Mais honnêtement, cela n'est pas réellement nécessaire, car si vous mettez votre gestionnaire de fenêtres à la dernière ligne de votre script, il se bloquera sans l'utilisation de <TT
+CLASS="USERINPUT"
+><B
+>exec</B
+></TT
+>.</P
+><P
+>Alors à quoi sert <TT
+CLASS="USERINPUT"
+><B
+>exec</B
+></TT
+> ? Et bien, admettons que vous voulez ajouter de nombreuses lignes de démarrage de gestionnaire de fenêtres dans votre script mais que vous ne voulez en faire marcher qu'un seul. Avec <TT
+CLASS="USERINPUT"
+><B
+>exec</B
+></TT
+>
+vous pouvez mettre la ligne de démarrage de votre choix au début. Car <TT
+CLASS="USERINPUT"
+><B
+>exec</B
+></TT
+> signifie:</P
+><P
+><SPAN
+CLASS="QUOTE"
+>"Quand ce programme est fini, finis le script à cet endroit"</SPAN
+></P
+><P
+>Ainsi si vous écrivez la ligne <TT
+CLASS="USERINPUT"
+><B
+>exec wmaker</B
+></TT
+> au dessus d'une ligne <TT
+CLASS="USERINPUT"
+><B
+>exec enlightenment</B
+></TT
+>, quand wmaker se termine, alors le script également et il n'ira jamais à la prochaine ligne.</P
+><P
+>Ainsi vous pourrez rajouter autant de lignes pour les gestionnaires de fenêtres que vous voudrez, cela ne modifiera rien.</P
+><H4
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN728"
+></A
+>Une autre manière de réaliser cela</H4
+><P
+>Comme alternative, vous pouvez démarrer votre gestionnaire de fenêtres EN PREMIER et stocker l'id du process dans une variable d'environnement :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>        wmaker &amp; wmpid=$!</PRE
+><P
+>cela le placera en fond (<TT
+CLASS="USERINPUT"
+><B
+>&amp;</B
+></TT
+>) et mettra l'id du process ($!) dans une variable (<TT
+CLASS="USERINPUT"
+><B
+>wmpid</B
+></TT
+>). Ainsi, pour réaliser le point de blocage, vous pouvez utiliser wait:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>        wait $wmpid</PRE
+><P
+>ou vous pouvez bloquer un programme que vous voulez toujours utiliser, comme peut être gkrellm, en ne le mettant pas en fond.</P
+><P
+>Désormais, j'utilise la méthode wait, car j'aime régler mon gestionnaire de fenêtres avant de lancer mes dockapps. Ainsi, avant de faire quoique ce soit d'autre, j'aime modifier les réglages de mon serveur X, comme le dpms, l'écran de veille, et même ajouter des répertoires au path des fontes (des fontes que je ne veux pas installer universellement). Et après avoir tout fait, j'aime nettoyer mon path de fontes, principalement car si j'exécute un gestionnaire de fenêtres, il n'est pas bon d'annuler le path des fontes tout le temps.</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN737"
+></A
+><P
+><B
+>Example A-1. <TT
+CLASS="FILENAME"
+>.xinitrc</TT
+></B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    # désactiver la mise en veille et activer les options energy star
+    xset s off
+    xset dpms 600 60 60
+
+    # ajouter mon path des fontes optionnel au path des fontes
+    xset +fp "$X_FONTPATH"
+    xset fp rehash
+
+    # exporter l'environnement courant, au cas ou il nécessite d'être débuggé
+    env &#62; ~/.xenv
+
+    # gestionnaire de fenêtres
+    fluxbox &#38; wmpid=$!
+
+    bbrun &amp;
+    wmCalClock &amp;
+    wmnet -x 70000 -d 300000 -L cablemodem -w &amp;
+    wmxmms &amp;
+
+    # POINT de BLOCAGE - attend la sortie du gestionnaire de fenêtres
+    wait $wmpid
+
+    # rétablit le path des fontes de x
+    xset fp default</PRE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="chap-themes.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="faq.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Thèmes</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Frequently asked questions (FAQ)</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

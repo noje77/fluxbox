@@ -1,0 +1,296 @@
+<HTML
+><HEAD
+><TITLE
+>Pour commencer</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="A propos de Fluxbox"
+HREF="x31.html"><LINK
+REL="NEXT"
+TITLE="Outils"
+HREF="c133.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x31.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="c133.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="AEN80"
+></A
+>Chapter 2. Pour commencer</H1
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN82"
+></A
+>Installer Fluxbox</H1
+><P
+>Cette section est une contribution de Jason Gillman Jr. "Ircaddict"</P
+><P
+>De nombreuses distributions fournissent des paquetages binaires de Fluxbox qui rendent l'installation de Fluxbox assez peu douloureuse. Cependant, il existe des raisons pour compiler les sources. Par exemple, la version le plus récente de Fluxbox peut ne pas être disponible. De plus, il peut être intéressant de compiler Fluxbox avec certaines options. Si vous désirez utiliser le paquetage de votre distribution, consultez la documentation pour les distributions. Pour certaines distributions, les paquetages binaires et les sources sont disponibles sur le site de Fluxbox.</P
+><P
+>Le but de ce document est d'aider les personnes qui sont relativement novices dans l'utilisation d'X window (ou de Linux en général) à compiler et installer le gestionnaire de fenêtre Fluxbox.</P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN87"
+></A
+>Acquérir les sources</H2
+><P
+>La première chose que vous devrez faire est de visiter la <A
+HREF="http://fluxbox.sourceforge.net/download.php"
+TARGET="_top"
+>page de téléchargement</A
+> et de télécharger le tarball des sources (l'extension devrait être .tar.gz). </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN91"
+></A
+>Extraire et compiler</H2
+><P
+>Bien, maintenant que vous avez le tarball des sources, vous devez extraire ce qu'il contient. Ceci peut-être fait en exécutant la commande suivante et en remplaçant le nom du fichier par celui du fichier que vous avez téléchargé :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ tar -xzvf fluxbox-0.1.12.tar.gz</PRE
+><P
+>La liste des fichiers extraits s'affichera à l'écran. Après cela, allez dans le repertoire qui a été créé (cela doit être quelque chose comme <TT
+CLASS="FILENAME"
+>fluxbox-0.1.12/</TT
+>, mais cela dépend de la version). La prochaine étape est de configurer (configure) et compiler (make) Fluxbox. Durant l'étape de configuration, vous pouvez (dé)sélectionnez des fonctionnalités de Fluxbox. Pour la plupart des personnes, celles par défaut devraient être bonnes. Si vous voulez que le slit de Fluxbox fonctionne avec les icônes du panel de KDE, vous devrez ajouter l'option <TT
+CLASS="USERINPUT"
+><B
+>--enable-kde</B
+></TT
+>. Afin de connaitre quelles autres options sont fournies par le script de configuration, utilisez l'option <TT
+CLASS="USERINPUT"
+><B
+>--help</B
+></TT
+>.  Si vous ne désirez pas sélectionner KDE, cela devrait suffire :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    $ ./configure
+    $ make</PRE
+><P
+>Après que Fluxbox ait été compilé, devenez root et lancez :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    # make install</PRE
+><P
+>Félicitations, vous avez désormais compilé et installé Fluxbox !</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN103"
+></A
+>Démarrer Fluxbox</H2
+><P
+>C'est bien joli si vous l'avez installé, mais quelle est son utilité si vous ne pouvez pas le démarrer ?</P
+><P
+>Il y a géneralement deux manières de démarrer X (et ainsi Fluxbox). La voie traditionnelle est d'utiliser la commande <TT
+CLASS="FILENAME"
+>startx</TT
+>. L'autre manière est d'utiliser un gestionnaire de login graphique (aussi appelé "display manager"). Le display manager le plus commun est <TT
+CLASS="FILENAME"
+>xdm</TT
+> qui fait partie du projet XFree86. Le display manager fourni par Gnome est appelé <TT
+CLASS="FILENAME"
+>gdm</TT
+>, et celui de KDE est <TT
+CLASS="FILENAME"
+>kdm</TT
+>.</P
+><P
+>Si X est demarré par la voie par défaut (via <TT
+CLASS="FILENAME"
+>startx</TT
+>), le fichier important est appelé <TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> et est présent dans votre répertoire personnel. Dans le cas ou vous démarrez via un display manager, le fichier est <TT
+CLASS="FILENAME"
+>.xsession</TT
+> et est également présent au même emplacement.</P
+><P
+>La prochaine étape est de trouver l'exécutable pour Fluxbox. Pour la plupart des personnes, il est situé dans /usr/local/bin/fluxbox.  Désormais vous devez éditer (ou créer) le fichier que j'ai mentionné. Ajoutez seulement la ligne suivante au bas de ce fichier :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>   exec /usr/local/bin/fluxbox</PRE
+><P
+>Modifiez le <TT
+CLASS="FILENAME"
+>/usr/local/bin/fluxbox</TT
+> pour le lieu où est votre exécutable Fluxbox. Une fois que cela est fait, sauvez le et fermez l'éditeur que vous avez utilisé pour l'éditer. Maintenant vous avez besoin de lancer la commande suivante si vous utilisez <TT
+CLASS="FILENAME"
+>startx</TT
+>:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>   $ chmod 700 .xinitrc</PRE
+><P
+>Dans le cas de <TT
+CLASS="FILENAME"
+>.xsession</TT
+> cela n'est pas necessaire. Dans les deux cas, vous devrez créer un répertoire dans lequel Fluxbox stocke sa configuration :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>   $ mkdir .fluxbox</PRE
+><P
+> Si vous ne le créez pas, lorsque vous quitterez Fluxbox et redémarrerez, vous perdrez tout vos réglages (le repertoire n'est pas auto-créé malheureusement).</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN125"
+></A
+>Pour finir</H2
+><P
+>Si vous avez besoin d'aide, postez votre question dans le forum d'aide de Fluxbox, et je suis certain que quelqu'un sera fier de vous aider. Vous pouvez aussi poser votre question sur la liste de mailing des utilisateurs de Fluxbox. Un lien vers cettes liste peut être trouvé sur le site de Fluxbox. En dernière note, je vous recommande de prendre les fichiers <TT
+CLASS="FILENAME"
+>init</TT
+>, <TT
+CLASS="FILENAME"
+>menu</TT
+>, et <TT
+CLASS="FILENAME"
+>titlebar</TT
+> dans le répertoire <TT
+CLASS="FILENAME"
+>/usr/local/share/fluxbox</TT
+> et de les copier dans votre répertoire <TT
+CLASS="FILENAME"
+>.fluxbox</TT
+>.</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x31.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c133.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>A propos de Fluxbox</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Outils</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

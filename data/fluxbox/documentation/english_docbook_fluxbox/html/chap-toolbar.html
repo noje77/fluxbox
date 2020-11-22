@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>The Toolbar</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="The Slit"
+HREF="chap-slit.html"><LINK
+REL="NEXT"
+TITLE="Editing Menus"
+HREF="c739.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="chap-slit.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="c739.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CHAP-TOOLBAR"
+></A
+>Chapter 8. The Toolbar</H1
+><P
+>The toolbar is a small area to display information 
+by fluxbox, like a clock, or buttons for running programs.</P
+><P
+>It is configured by the init-file and the style-file.
+Init settings usually are changed by the toolbar menu.</P
+><P
+>The toolbar can be switched off (made invisible by setting
+<SAMP
+CLASS="COMPUTEROUTPUT"
+>session.screen0.toolbar.visible: false</SAMP
+>
+in fluxbox's init file.</P
+><P
+>The tools to be displayed are configured in the resource file,
+usually .fluxbox/init, with the entry toolbar.tools.
+<DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN733"
+></A
+><P
+><B
+>Example 8-1. toolbar tools example</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>session.screen0.toolbar.tools: clock, iconbar, workspacename</PRE
+></DIV
+>
+Possible tools: workspacename, prevworkspace, nextworkspace, iconbar, 
+systemtray, prevwindow, nextwindow, clock</P
+><P
+>The toolbar width and transparency and layer can be configured via the
+toolbar menu. The toolbar menu is displayed if one right-clicks the clock or
+the workspacename in the toolbar.</P
+><P
+>The iconbar can be configured to display None, Icons from all
+workspaces, Workspace Icons, all windows from Workspace, All Windows 
+from all workspaces.</P
+><P
+>How this is displayed is configured in the style file.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="chap-slit.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c739.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The Slit</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Editing Menus</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

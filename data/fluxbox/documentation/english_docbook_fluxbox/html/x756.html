@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Available Commands</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Editing Menus"
+HREF="c739.html"><LINK
+REL="PREVIOUS"
+TITLE="Editing Menus"
+HREF="c739.html"><LINK
+REL="NEXT"
+TITLE="Themes"
+HREF="chap-themes.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c739.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 9. Editing Menus</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="chap-themes.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN756"
+>Available Commands</A
+></H1
+><P
+>The Fluxbox menu is a text file that allows you to make
+subfolders, launch applications, control workspaces, configure
+Fluxbox, and exit X. The menu can take the following
+commands:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    # menu file 2004-06-22
+    [begin] (MenuTitle)
+    [submenu]  (SubMenuName) {SubMenuTitle}
+    [exec] (ApplicationName) {/path/to/program}
+    [include] (/path/to/menufile) &lt;icon file&gt;
+    [end]
+    [nop] (--------)
+    [workspaces] (SubMenuName)
+    [wallpapers] (/path/to/background/images) {background-setting-command}
+    [wallpapermenu] (directory) {command}
+    [stylesdir] (/path/to/stylesdir)
+    [config] (FluxboxConfiguration)
+    [reconfigure] (Reconfigure)
+    [restart] (Restart)
+    [exit] (Exit)</PRE
+><P
+>  <P
+></P
+><UL
+><LI
+><P
+>Comments start with <KBD
+CLASS="USERINPUT"
+>#</KBD
+>, everything upto the line's end is ignored.</P
+></LI
+><LI
+><P
+>Text in <KBD
+CLASS="USERINPUT"
+>[]</KBD
+> is the command to fluxbox.</P
+></LI
+><LI
+><P
+>Text in <KBD
+CLASS="USERINPUT"
+>()</KBD
+> is the text shown in the menu.</P
+></LI
+><LI
+><P
+>Text in <KBD
+CLASS="USERINPUT"
+>{}</KBD
+> is the command that is started if this entry is clicked.</P
+></LI
+><LI
+><P
+>Text in <KBD
+CLASS="USERINPUT"
+>&lt;&gt;</KBD
+> specifies an icon file. The icon
+files path should be absolute and in xpm-format.</P
+></LI
+><LI
+><P
+>If the parameter to include directive is a directory, every file in this
+      path will be included.</P
+><P
+>Included files must start with <KBD
+CLASS="USERINPUT"
+>[begin]</KBD
+> and end with
+      <KBD
+CLASS="USERINPUT"
+>[end]</KBD
+>.</P
+></LI
+></UL
+>
+  Not all entries are necessary in all cases, e.g. <KBD
+CLASS="USERINPUT"
+>[end]</KBD
+> has no use for an icon.</P
+><P
+>Note that there is no hard limit on the nesting depth of
+submenus. There probably is a practical one, though.</P
+><P
+><KBD
+CLASS="USERINPUT"
+>[nop]</KBD
+> - This allows you to put text
+or an empty line if you wish that will not execute anything but
+just act as a separator in your menu.</P
+><P
+><KBD
+CLASS="USERINPUT"
+>[reconfigure]</KBD
+> - If you use the menu
+to change your Fluxbox configuration, the changes will be lost
+after you exit Fluxbox. They need to be written to the
+<TT
+CLASS="FILENAME"
+>init</TT
+> file to be permanent changes, which can
+be done by hitting reconfigure after you've made the changes you
+want.</P
+><P
+><KBD
+CLASS="USERINPUT"
+>[restart]</KBD
+> - I just want to make sure
+that everyone knows restart only restarts Fluxbox, and not your
+whole system.</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN791"
+></A
+><P
+><B
+>Example 9-2. <TT
+CLASS="FILENAME"
+>menu</TT
+></B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>       # Fluxbox menu file
+       [begin] (Fluxbox)
+         [exec] (rxvt) {rxvt -ls}
+         [exec] (netscape) {netscape -install}
+         [exec] (The GIMP) {gimp}
+         [exec] (XV) {xv}
+         [exec] (Vim) {rxvt -geometry 132x60 -name VIM -e screen vim}
+         [exec] (Mutt) {rxvt -name mutt -e mutt}
+         [submenu] (mozilla)
+           [exec] (browser) {mozilla -browser}
+           [exec] (news) {mozilla -news}
+           [exec] (mail) {mozilla -mail}
+           [exec] (edit) {mozilla -edit}
+           [exec] (compose) {mozilla -compose}
+         [end]
+         [submenu] (Startup)
+           [exec] (gkrellm) {gkrellm -w}
+           [exec] (xmms) {xmms -p}
+           [exec] (galeon) {galeon -s}
+           [exec] (kdeinit) {kdeinit}
+         [end]
+		 [submenu] (user wallpapers)
+		   [wallpapers] (~/.backgrounds) {fbsetbg -f}
+		 [end]
+         [submenu] (Window Manager)
+           [exec] (Edit Menus) {nedit ~/.fluxbox/menu}
+           [submenu] (Style) {Which Style?}
+             [stylesdir] (~/.fluxbox/styles)
+             [stylesmenu] (Fluxbox Styles) {/usr/local/share/fluxbox/styles}
+           [end]
+           [config] (Config Options)
+           [reconfig] (Reconfigure)
+           [restart] (Restart)
+         [end]
+         [exit] (Log Out)
+       [end]
+       # end of menu file</PRE
+></DIV
+><P
+>or consult the rather complete sample <TT
+CLASS="FILENAME"
+>menu</TT
+> file that
+comes with Fluxbox. </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c739.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="chap-themes.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Editing Menus</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c739.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Themes</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

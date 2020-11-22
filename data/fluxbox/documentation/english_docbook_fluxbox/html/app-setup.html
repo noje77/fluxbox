@@ -1,0 +1,398 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Setting up
+.xinitrc/.xsession</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Advanced Theme Editing"
+HREF="x835.html"><LINK
+REL="NEXT"
+TITLE="Frequently asked questions (FAQ)"
+HREF="faq.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="APPENDIX"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x835.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="faq.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="APP-SETUP"
+></A
+>Appendix A. Setting up
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+>/<TT
+CLASS="FILENAME"
+>.xsession</TT
+></H1
+><P
+>Contributed by Verin.</P
+><H4
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN911"
+></A
+>The place of xinit in
+things</H4
+><P
+>A window manager is just one more
+application for X11, like <TT
+CLASS="FILENAME"
+>netscape</TT
+> or
+<TT
+CLASS="FILENAME"
+>gimp</TT
+> or
+<TT
+CLASS="FILENAME"
+>xterm</TT
+>. Many people new
+to X11 come to believe that X11 runs the window manager and the window
+manager runs programs. But that's not true. If configured right,
+you can run all your applications under X11, kill the window
+manager, and start another window manager up.</P
+><P
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>real</I
+></SPAN
+> program that X11 runs, that runs
+other programs, is your <TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> or
+<TT
+CLASS="FILENAME"
+>.xsession</TT
+> script. When X11 is started, your
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> or <TT
+CLASS="FILENAME"
+>.xsession</TT
+>
+script is run, and when the script is done, X11 comes down. Let me
+repeat that, its important: <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>when
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> is finished, that is when X
+ends</I
+></SPAN
+>. It isn't when your window manager exits.</P
+><H4
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN924"
+></A
+>Script layout</H4
+><P
+>Well, first realize something you already know.
+When you type a command in a shell, you can't do anything else
+until that command is done, when it exits. Your
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> or
+<TT
+CLASS="FILENAME"
+>.xsession</TT
+> script is just the same. When it starts going through
+it, if it hits any program that takes a long time to run (like
+most X11 programs), it stops right there until that program is
+finished.</P
+><P
+>Ideally, you should only have one place where the script
+'hangs'. And usually you want this to be at the end. So, if you
+have any programs you want to run under X11 before you get to this
+'hang' spot, you should background them. You put an
+<KBD
+CLASS="USERINPUT"
+>&amp;</KBD
+> at the end of the line. So, say you
+want <TT
+CLASS="FILENAME"
+>xclock</TT
+> to run in addition to other
+things, put this line before your 'hang' spot:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    xclock &amp;</PRE
+><P
+>Now, the next thing is the <KBD
+CLASS="USERINPUT"
+>exec</KBD
+> thing
+you see, where lots of sources recommend how to add your
+window manager to your script. But honestly, its not really
+necessary, if you put your window manager on the last line of your
+script, it will hang there just fine without the
+<KBD
+CLASS="USERINPUT"
+>exec</KBD
+>.</P
+><P
+>So why the <KBD
+CLASS="USERINPUT"
+>exec</KBD
+>? Well, lets say you
+want to put lots of window manager start lines in your script, and
+you want only one to work. Well, with <KBD
+CLASS="USERINPUT"
+>exec</KBD
+>
+you can put your chosen start-line at the top. Because this is
+what <KBD
+CLASS="USERINPUT"
+>exec</KBD
+> means:</P
+><P
+><SPAN
+CLASS="QUOTE"
+>"Replace myself with this program, i.e. start it and
+terminate myself immediately when it finishes. "</SPAN
+></P
+><P
+>So if you put an <KBD
+CLASS="USERINPUT"
+>exec wmaker</KBD
+> line
+atop of a <KBD
+CLASS="USERINPUT"
+>exec enlightenment</KBD
+> line, when
+<TT
+CLASS="FILENAME"
+>wmaker</TT
+> is done, so is the script, it never
+gets to the next line.</P
+><P
+>See what I mean by being unnecessary? You could just put a
+bunch of commented-out window manager lines, and it would work just
+the same.</P
+><H4
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN946"
+></A
+>Another way to do things</H4
+><P
+>As an alternative, you could start up your window manager
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>first</I
+></SPAN
+>, and store the process ID in a
+environment variable:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>        wmaker &amp; wmpid=$!</PRE
+><P
+>that puts it in the background
+(<KBD
+CLASS="USERINPUT"
+>&amp;</KBD
+>) and puts the process id
+(<KBD
+CLASS="USERINPUT"
+>$!</KBD
+>) in a
+variable (<KBD
+CLASS="USERINPUT"
+>wmpid</KBD
+>). Then, to make your hang
+point, you can <KBD
+CLASS="USERINPUT"
+>wait</KBD
+>:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    wait $wmpid</PRE
+><P
+>or you could hang on a program you always want to use, like
+maybe <TT
+CLASS="FILENAME"
+>gkrellm</TT
+>, by just not backgrounding it.
+But remember that as soon as you terminate it, so will your X11
+session.</P
+><P
+>Now, I use the <TT
+CLASS="FILENAME"
+>wait</TT
+> method, because I
+like picking my window manager before I launch my dockapps and
+stuff. Also, before doing anything else, I like to change the
+settings on my X11 server, like the dpms, the screen saver, and even
+add some directories to my font path (fonts I don't want to
+install universally). And then after everything is done, I like to
+clean up my fontpath, mainly because if I ran a display manager,
+its not good at resetting the font path all the time.</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN960"
+></A
+><P
+><B
+>Example A-1. <TT
+CLASS="FILENAME"
+>.xinitrc</TT
+></B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    # turn off screen blanking and turn on energy star features
+    xset s off
+    xset dpms 600 60 60
+
+    # add my optional fonts to the font path
+    xset +fp "$X_FONTPATH"
+    xset fp rehash
+
+    # export the current environment, in case it needs to be debugged
+    env &#62; ~/.xenv
+
+    # window manager
+    fluxbox &#38; wmpid=$!
+
+    bbrun &amp;
+    wmCalClock &amp;
+    wmxmms &amp;
+
+    # HANG POINT - wait for window manager to exit
+    wait $wmpid
+
+    # restore the x fontpath
+    xset fp default</PRE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x835.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="faq.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Advanced Theme Editing</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Frequently asked questions (FAQ)</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

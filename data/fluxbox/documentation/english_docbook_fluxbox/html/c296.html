@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Key Bindings</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Advanced Tabbing"
+HREF="x240.html"><LINK
+REL="NEXT"
+TITLE="Key Names"
+HREF="x328.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x240.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x328.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="AEN296"
+></A
+>Chapter 5. Key Bindings</H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="c296.html#AEN298"
+>The Keygrabber</A
+></DT
+><DT
+><A
+HREF="x328.html"
+>Key Names</A
+></DT
+><DT
+><A
+HREF="x359.html"
+>Actions</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN298"
+>The Keygrabber</A
+></H1
+><P
+>The keygrabber works very similarly to
+<TT
+CLASS="FILENAME"
+>bbkeys</TT
+>, which is an excellent tool but had
+some limitations (and was license incompatible), but with a
+totally new syntax for the config file, and a couple of new
+features which makes Fluxbox even more powerful.</P
+><P
+>For one, the new keygrabber supports chains of key sequences
+(like emacs)... so you could for example have: <KBD
+CLASS="USERINPUT"
+>Mod1 + M
++ Mod1 + F</KBD
+> to switch to the next workspace (not that
+anyone would actually use that particular key sequence.)</P
+><P
+>And if you've typed in a part of the sequence but decide
+not to continue (abort) then you can hit another key sequence
+(that you configured in your keys file) to simply abort (with:
+AbortChain).</P
+><P
+>In addition to this you can also bind a key sequence to
+switch between grouped/tabbed windows in a group (with: NextTab and
+PrevTab).</P
+><P
+>It is possible to execute more than one command with one keybinding.
+The commands will be executed parallel.</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN307"
+></A
+><P
+><B
+>Example 5-1. macro command</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    Mod4 Shift x :MacroCmd { ExecCommand xterm } { ExecCommand gv 1.ps }</PRE
+></DIV
+><P
+>Finally, for your convenience we (or rather vlaad and
+tarzeau) have supplied you with two scripts (they both do the same
+thing) to convert a <TT
+CLASS="FILENAME"
+>bbkeys</TT
+> conf-file to a
+Fluxbox keys-file.  (usage of the scripts is described in them).
+Download: <A
+HREF="http://fluxbox.sourceforge.net/download/convertkeys"
+TARGET="_top"
+>convertkeys</A
+>
+or <A
+HREF="http://fluxbox.sourceforge.net/download/convertkeys2"
+TARGET="_top"
+>convertkeys2</A
+>.</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN314"
+></A
+><P
+><B
+>Example 5-2. A Fluxbox keysfile</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    Mod1 Tab :NextWindow
+    Mod1 F1 :Workspace 1
+    Mod1 F2 :Workspace 2
+    Mod1 F3 :Workspace 3
+    Mod1 F4 :Workspace 4
+    Control n Mod1 n :NextTab</PRE
+></DIV
+><P
+>So, as you can see, First there is a modifier, then a key
+(then a modifier and key again if you wish to have a longer
+sequence) and finally a colon with an action.</P
+><P
+>For a list of valid keys actions read a little further down in
+this document. </P
+><P
+>And why this is good for you? Well, now you can master your
+xmms, for example:</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN320"
+></A
+><P
+><B
+>Example 5-3. XMMS keybindings</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    Mod1 P :ExecCommand xmms -p
+    Mod1 F :ExecCommand xmms -f</PRE
+></DIV
+><P
+>If you have some additional keys (e.g multimedia keys),
+you can control xmms this way if you have configured those keys
+properly in XFree86:</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN324"
+></A
+><P
+><B
+>Example 5-4. Multimedia keys for XMMS</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    None XF86AudioPlay :ExecCommand xmms -u
+    None XF86AudioStop :ExecCommand xmms -s</PRE
+></DIV
+><P
+>I would say check xmms --help for more info, but you are
+doing this right now probably...</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x240.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x328.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Advanced Tabbing</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Key Names</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

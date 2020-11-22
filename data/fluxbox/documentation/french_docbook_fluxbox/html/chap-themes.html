@@ -1,0 +1,306 @@
+<HTML
+><HEAD
+><TITLE
+>Thèmes</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Commandes Disponibles"
+HREF="x638.html"><LINK
+REL="NEXT"
+TITLE="Configuration
+.xinitrc/.xsession"
+HREF="app-setup.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x638.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="app-setup.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CHAP-THEMES"
+></A
+>Chapter 9. Thèmes</H1
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN652"
+></A
+>Bases des Thèmes</H1
+><P
+>Contribution par : Justin Rebelo <A
+HREF="mailto:rebelo@shaw.ca"
+TARGET="_top"
+>rebelo@shaw.ca</A
+> aka
+"demerol".</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN656"
+></A
+>Qu'est-ce qu'un style et comment cela fonctionne-t-il ?</H2
+><P
+>Basiquement, un style est un thème pour Fluxbox. C'est un simple fichier texte ascii qui dit à fluxbox comment générer l'apparence des différent composants du gestionnaire de fenêtres. Les styles sont disposés dans <TT
+CLASS="FILENAME"
+>~/.fluxbox/styles</TT
+> et dans le répertoire global de fluxbox, qui varie selon les méthodes d'installations utilisées..</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN659"
+></A
+>Comment faire mon propre style ?</H2
+><P
+>Commencez par ouvrir un style dans votre éditeur favori (je recommande <TT
+CLASS="FILENAME"
+>vim</TT
+>). Regardez la structure et l'organisation du style. Le simple fait d'observer répondra à beaucoup de questions que vous pourriez avoir.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN662"
+></A
+>Structure d'un style :</H2
+><P
+>Le style est fait de plusieurs composants principaux qui ont chacun leurs sous-directives. <TT
+CLASS="USERINPUT"
+><B
+>La barre de menu</B
+></TT
+>, <TT
+CLASS="USERINPUT"
+><B
+>le menu</B
+></TT
+> et <TT
+CLASS="USERINPUT"
+><B
+>la fenêtre</B
+></TT
+> constituent ses composants principaux. La directive <TT
+CLASS="USERINPUT"
+><B
+>window.*</B
+></TT
+>
+contrôle l'apparence de vos cadres de fenêtres et <TT
+CLASS="USERINPUT"
+><B
+>window.tab.*</B
+></TT
+> contrôle l'apparence des onglets de fenêtres. <TT
+CLASS="USERINPUT"
+><B
+>menu.*</B
+></TT
+> contrôle l'apparence du menu racine qui apparait quand vous faites un clic droit sur le bureau.  <TT
+CLASS="USERINPUT"
+><B
+>toolbar.*</B
+></TT
+> est la barre que vous voyez en haut ou en bas de l'écran. Le slit (aussi appelé le dock, wharf, etc dans les autres gestionnaires  de fenêtres) est contrôlé par les préférences de la <TT
+CLASS="USERINPUT"
+><B
+>barre d'outils</B
+></TT
+>.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN672"
+></A
+>Puis-je mettre une image/couleur de fond ?</H2
+><P
+>Quelque part dans le fichier de style, vous verrez une ligne qui commence par <TT
+CLASS="USERINPUT"
+><B
+>rootCommand</B
+></TT
+> et qui est suivie par une commande (de préférence <TT
+CLASS="FILENAME"
+>bsetbg</TT
+>) dont le rôle est de mettre en place une image de fond. Vous <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>pouvez</I
+></SPAN
+> utiliser d'autres <TT
+CLASS="USERINPUT"
+><B
+>rootCommands</B
+></TT
+> que <TT
+CLASS="FILENAME"
+>bsetbg</TT
+>, mais je ne le recommande pas.
+<TT
+CLASS="FILENAME"
+>bsetbg</TT
+> est en fait une encapsulation d'autres programmes qui configurent réellement le fopnd d'écran.  De cette manière, l'utilisateur spécifie quelles <TT
+CLASS="USERINPUT"
+><B
+>rootCommands</B
+></TT
+> il préfère et elles seront utilisées par tous les thèmes qui utilisent <TT
+CLASS="FILENAME"
+>bsetbg</TT
+>.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN682"
+></A
+>Puis-je ajouter des notes/commentaires dans mes styles ?</H2
+><P
+>Bien sûr, commencez simplement la ligne par une dièse (<TT
+CLASS="USERINPUT"
+><B
+>#</B
+></TT
+>), un point d'exclamation (<TT
+CLASS="USERINPUT"
+><B
+>!</B
+></TT
+>), ou utilisez les commentaires à la C (<TT
+CLASS="USERINPUT"
+><B
+>//</B
+></TT
+>).</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN687"
+></A
+>J'ai encore d'autres questions...</H2
+><P
+>Jetez un oeil aux styles offerts avec fluxbox, vous devriez trouver les réponses dedans, ou encore, essayez d'autres préférences. Si vraiment vous ne trouvez pas les réponses, arrêtez-vous sur #fluxbox sur openprojects. Mon nick est demerol.</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x638.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="app-setup.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Commandes Disponibles</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Configuration
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+>/<TT
+CLASS="FILENAME"
+>.xsession</TT
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

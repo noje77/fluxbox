@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>The Slit</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Desktop Backgrounds"
+HREF="chap-bg.html"><LINK
+REL="NEXT"
+TITLE="The Toolbar"
+HREF="chap-toolbar.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="chap-bg.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="chap-toolbar.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CHAP-SLIT"
+></A
+>Chapter 7. The Slit</H1
+><P
+>One of the most frequently asked questions is "What is the
+slit?" In fact, when this document was written, I also
+copied it to the top of the FAQ to point to this section in order to
+stop it from being asked in #fluxbox ten times a day, and to end
+the myth that the Slit is another name for the Toolbar.</P
+><P
+>The slit is one of the many parts of Fluxbox that has been
+inherited from Blackbox. It is designed to hold WindowMaker
+Dockapps, (and anything that runs in that mode which is called
+'withdrawn' or (less often) 'swallowed'). Such applications
+often have a <KBD
+CLASS="USERINPUT"
+>-w</KBD
+> option, but some are
+automatically in withdrawn mode.</P
+><P
+>Well, the first thing is to make sure that it's compiled
+into your copy of Fluxbox. It's generally safe to assume it is.
+As far as I know, all packages for different distributions ship
+with it. If you think you're better off without it, you can disable
+it at compile time. Note however, that an unused slit occupies
+<SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>no</I
+></SPAN
+> screen space and only very little
+memory, so it's usually only necessary to disable it if it
+interferes with some other software you use.</P
+><P
+>Other than that, You can run any 'dockable' application.
+(This is also known as running in 'withdrawn' mode). As an
+example, <TT
+CLASS="FILENAME"
+>xmms</TT
+> ships with the
+<TT
+CLASS="FILENAME"
+>wmxmms</TT
+> application. Simply run
+<KBD
+CLASS="USERINPUT"
+>wmxmms &amp;</KBD
+>, and it will appear in the
+slit. As mentioned above, some applications (for example
+<TT
+CLASS="FILENAME"
+>gkrellm</TT
+>) need the <KBD
+CLASS="USERINPUT"
+>-w</KBD
+>
+command line switch to appear in the Slit.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN684"
+></A
+>Where can I get dockapps?</H2
+><P
+>The best place to start is
+<A
+HREF="http://www.bensinclair.com/dockapp"
+TARGET="_top"
+>the Dockapp
+warehouse</A
+>. There is a very large repository of different
+dockapps available there. Apart from that, you could search
+<A
+HREF="http://freshmeat.net/"
+TARGET="_top"
+>Freshmeat</A
+>, or check
+with your distribution.</P
+><P
+>The <A
+HREF="http://bbtools.sourceforge.net"
+TARGET="_top"
+>bbtools</A
+> page holds
+a bunch of Blackbox/Fluxbox utils, most of which can run in the
+slit.</P
+><P
+>Also, if you have KDE support enabled, KDE dock applets will
+appear in the slit.</P
+><P
+><A
+HREF="http://www.dockapps.org/"
+TARGET="_top"
+>Dockapps.Org</A
+>
+is a new website exclusively dedicated to dockapps.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN693"
+></A
+>Can I change Slit behavior?</H2
+><P
+>Of course. Simply right-click on the visible portion of the
+slit, and select options from there. Most of these options are the
+exact same as on the Taskbar. The only thing that isn't is
+<SAMP
+CLASS="COMPUTEROUTPUT"
+>Direction</SAMP
+>. Your slit can run
+either <SAMP
+CLASS="COMPUTEROUTPUT"
+>Horizontal</SAMP
+> or
+<SAMP
+CLASS="COMPUTEROUTPUT"
+>Vertical</SAMP
+>.</P
+><P
+>There's also a <KBD
+CLASS="USERINPUT"
+>Maximize Over Slit</KBD
+>
+option in the configure menu; this allows maximized windows to
+cover the slit.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN700"
+></A
+>I want my slit apps to remember
+order!</H2
+><P
+>In Fluxbox 0.1.10 and later, this is possible, using a
+<TT
+CLASS="FILENAME"
+>slitlist</TT
+> file. Here are some instructions on
+using it.</P
+><P
+>The current order of dockapps is stored in a file, by default
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/slitlist</TT
+>. When loading dockapps
+into the slit, it attempts to maintain the previous ordering,
+matching previously-run dockapps by name.</P
+><P
+>A simple procedure for getting the slit sequences the
+way you like is:</P
+><DIV
+CLASS="PROCEDURE"
+><P
+><B
+>Ordering dockapps</B
+></P
+><OL
+TYPE="1"
+><LI
+CLASS="STEP"
+><P
+>Run Fluxbox with no pre-loaded dockapps.</P
+></LI
+><LI
+CLASS="STEP"
+><P
+>Run dockapps individually in the order you want them.</P
+></LI
+><LI
+CLASS="STEP"
+><P
+>Re-add dockapps to your auto-run script, for example
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> or <TT
+CLASS="FILENAME"
+>.xsession</TT
+>. Order doesn't matter here.</P
+></LI
+></OL
+></DIV
+><P
+>This sequence is saved to
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/slitlist</TT
+> by default and will be
+maintained in future Fluxbox sessions.</P
+><P
+>You are free to manually edit the
+<TT
+CLASS="FILENAME"
+>slitlist</TT
+> file.  It is a simple list of window
+names, one line per dockapp. This file should be edited while not
+running Fluxbox. Otherwise changes may get overwritten.</P
+><P
+>You also have the option of choosing a different
+path for the slit list file. The following example
+<TT
+CLASS="FILENAME"
+>init</TT
+> file entry changes the path:</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN722"
+></A
+><P
+><B
+>Example 7-1. Slitlist specification</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    session.slitlistFile: /home/me/etc/slitsort</PRE
+></DIV
+><P
+>Note that there is no option to disable the sorting
+entirely. The patch author could not think of any benefit to
+arbitrary ordering.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="chap-bg.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="chap-toolbar.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Desktop Backgrounds</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Toolbar</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

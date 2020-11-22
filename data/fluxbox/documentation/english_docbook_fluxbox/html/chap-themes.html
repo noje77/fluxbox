@@ -1,0 +1,322 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Themes</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Available Commands"
+HREF="x756.html"><LINK
+REL="NEXT"
+TITLE="Advanced Theme Editing"
+HREF="x835.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x756.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x835.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CHAP-THEMES"
+></A
+>Chapter 10. Themes</H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="chap-themes.html#AEN799"
+>Theme basics</A
+></DT
+><DT
+><A
+HREF="x835.html"
+>Advanced Theme Editing</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN799"
+>Theme basics</A
+></H1
+><P
+>This section was contributed by <A
+HREF="mailto:rebelo@shaw.ca"
+TARGET="_top"
+>Justin Rebelo</A
+> aka
+"demerol".</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN803"
+></A
+>What is a style and how does it
+work?</H2
+><P
+>A style is basically a theme for Fluxbox. It is a simple
+ASCII text file that tells Fluxbox how to generate the appearance
+of the different components of the window manager. They are
+usually located in <TT
+CLASS="FILENAME"
+>~/.fluxbox/styles</TT
+> and in
+the global Fluxbox share directory, which will vary depending on
+the method of installation used.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN806"
+></A
+>How do I make my own?</H2
+><P
+>Start off by opening a style in your favorite text editor (I
+recommend <TT
+CLASS="FILENAME"
+>vim</TT
+>). Look at the style, how it is
+structured and organized. Just looking at it will explain most of
+the questions you may have.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN809"
+></A
+>Structure of a
+style</H2
+><P
+>The style is made up of a few major components which then
+have their own sub-directives. The <KBD
+CLASS="USERINPUT"
+>toolbar</KBD
+>,
+<KBD
+CLASS="USERINPUT"
+>menu</KBD
+> and <KBD
+CLASS="USERINPUT"
+>window</KBD
+> are
+the major components. The <KBD
+CLASS="USERINPUT"
+>window.*</KBD
+>
+directives control the appearance of your window frames,
+<KBD
+CLASS="USERINPUT"
+>window.tab.*</KBD
+> controls the appearance of the
+window tabs. <KBD
+CLASS="USERINPUT"
+>menu.*</KBD
+> controls the appearance
+of the popup menu that you see when you right click on the
+desktop. <KBD
+CLASS="USERINPUT"
+>toolbar.*</KBD
+> is the bar you will see
+at the top or bottom of your screen. The Slit (also called a dock,
+wharf, etc in other WMs) is controlled by the
+<KBD
+CLASS="USERINPUT"
+>toolbar</KBD
+> settings, too if you don't set its
+style specifically.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN819"
+></A
+>How do I change the appearance of the slit?</H2
+><P
+>The slit usually uses the same options as the toolbar. Most
+of the time this should work reasonably well. If you want to
+specifically style the slit, there are three style directives you
+can use:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    slit: [texture option]
+    slit.color: [color value]
+    slit.colorTo: [color value]</PRE
+><P
+>These commands work just like those for menu, window etc.
+when texturing the Slit.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN823"
+></A
+>Can I set a background image/color?</H2
+><P
+>Somewhere in the style file you might see a line with
+<KBD
+CLASS="USERINPUT"
+>rootCommand</KBD
+> at the beginning and it will be
+followed by a command to set the background color or image of the style. 
+Fluxbox includes the programm <TT
+CLASS="FILENAME"
+>bsetroot</TT
+> to set color
+and gradient background and <TT
+CLASS="FILENAME"
+>fbsetbg</TT
+> to display
+images.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN828"
+></A
+>Can I add note/comments in my styles?</H2
+><P
+>Sure, just start a line with a hash
+(<KBD
+CLASS="USERINPUT"
+>#</KBD
+>), a
+bang(<KBD
+CLASS="USERINPUT"
+>!</KBD
+>), or use C++
+style comments (<KBD
+CLASS="USERINPUT"
+>//</KBD
+>).</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN833"
+></A
+>I still have more questions...</H2
+><P
+>Take a look at the styles provided with Fluxbox, you should
+be able to find the answer there or by trying different settings.
+If you still can't get it, stop by #fluxbox on OPN. My
+nick is demerol.</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x756.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x835.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Available Commands</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Advanced Theme Editing</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

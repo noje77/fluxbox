@@ -1,0 +1,342 @@
+<HTML
+><HEAD
+><TITLE
+>Les fontes Artwiz pour Fluxbox</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Frequently asked questions (FAQ)"
+HREF="faq.html"><LINK
+REL="NEXT"
+TITLE="Débuggage"
+HREF="app-debugging.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="APPENDIX"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="faq.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="app-debugging.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="APP-ARTWIZ"
+></A
+>Appendix C. Les fontes Artwiz pour Fluxbox</H1
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN880"
+></A
+>Introduction</H2
+><P
+> Les fontes appelées Artwiz sont des fontes qui ont été créées 
+(ce qui est assez surprenant) par un gars qui se nomme lui même Artwiz. 
+
+Han a été sympathique pour mettre un tarball des fontes sur son site.
+Vous pouvez télécharger les fontes sur <A
+HREF="http://www.xs4all.nl/~hanb/software/fluxbox/artwiz-fonts.tar.bz2"
+TARGET="_top"
+>http://www.xs4all.nl/~hanb/software/fluxbox/artwiz-fonts.tar.bz2</A
+>.</P
+><P
+>Vous n'avez pas besoin d'installer les fontes manuellement si vous avez les RPMs Mandrake. Elles y sont déjà incluses. Si ce n'est pas le cas et bien voilà la marche à suivre. Il y a deux manières d'installer les fontes artwiz : installation système ou utilisateur.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN884"
+></A
+>Installation système</H2
+><P
+>Si vous désirez installer les fontes pour tout les utilisateurs de votre système, télécharger le tarball dans le répertoire <TT
+CLASS="FILENAME"
+>/tmp</TT
+> et procédez de la manière suivante :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>	# cd /usr/X11R6/lib/X11/fonts
+	# tar xjf /tmp/artwiz-fonts.tar.bz2
+	# cd fluxbox-artwiz-fonts
+	# mkfontdir
+	# chkfontpath -q -a /usr/X11R6/lib/X11/fonts/fluxbox-artwiz-fonts:unscaled</PRE
+><P
+>Puis redémarrez le serveur de fonte. Notez que votre distribution pourrait avoir un emplacement différent pour les fontes système, comme <TT
+CLASS="FILENAME"
+>/usr/share/fonts</TT
+>. Néanmoins le repertoire ci dessus devrait être sensiblement celui par défaut.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN890"
+></A
+>Installation utilisateur</H2
+><P
+>Si vous désirez installer les fontes de cette manière, la procédure est plus facile.
+Téléchargez le tarball dans votre répertoire home, puis :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>	tar xjf artwiz-fonts.tar.bz2
+	mv fluxbox-artwiz-fonts .fonts
+	mkfontdir $HOME/.fonts'</PRE
+><P
+>Editez votre fichier <TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> ou
+<TT
+CLASS="FILENAME"
+>.xsession</TT
+> (cela dépend de la distribution) afin qu'il contienne les lignes suivantes avant les appels programme :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>	xset +fp $HOME/.fonts</PRE
+><P
+>Puis (re)démarrez X et utilisez <TT
+CLASS="FILENAME"
+>xlsfonts</TT
+> ou
+<TT
+CLASS="FILENAME"
+>xlsfonts</TT
+> afin de vérifier si les fontes sont reconnues par le système.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN900"
+></A
+>Bugs</H2
+><P
+>Les fontes artwiz rentrent parfois en conflit avec les configurations des locales. Afin de les faire fonctionner , vous devez ajouter cela au début de vos fichiers<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+> ou
+<TT
+CLASS="FILENAME"
+>.xsession</TT
+>:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>	export LC=C
+	export LC_ALL=C</PRE
+><P
+>Ces réglages sont pour les locales donc si vos fontes n'apparaissent pas ou si vous avez un tout autre problème lié aux locales, enlevez-les. Il y a une solution différente communiquée par aleczapka ci dessous.</P
+><P
+>Cette solution permet de garder vos préferences nationales et être encore capable d'utiliser les fontes artwiz dans Fluxbox.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN907"
+></A
+>Fix du réglage des locales</H2
+><P
+>La solution est très simple. Tout ce que vous avez à faire c'est de fixer votre fichier <TT
+CLASS="FILENAME"
+>fonts.alias</TT
+> (et/ou
+<TT
+CLASS="FILENAME"
+>fonts.dir</TT
+>) .</P
+><P
+>Cela réglera également les problèmes avec d'autres applications (par exemple evolution et UTF-8). Premièrement vous devez éditer proprement le fichier
+<TT
+CLASS="FILENAME"
+>fonts.dir </TT
+>. Il doit être localisé dans le répertoire ou sont installées les fontes artwiz. (si non changez le dans ce répertoire et lancez
+<TT
+CLASS="FILENAME"
+>mkfontdir</TT
+>).</P
+><P
+>La syntaxe de ce fichier est simple. La première ligne contient seulement le nombre de fontes dans ce repertoire. Toutes les lignes suivantes sont de la forme </P
+><PRE
+CLASS="PROGRAMLISTING"
+>     nom_du_fichier_de_fonte nom_de_la_fonte</PRE
+><P
+>Voilà un exemple du contenu d'un fichier <TT
+CLASS="FILENAME"
+>fonts.dir</TT
+> : </P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN918"
+></A
+><P
+><B
+>Example C-1. <TT
+CLASS="FILENAME"
+>fonts.dir</TT
+></B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>14
+glisp.pcf.gz -artwiz-glisp-medium-r-normal--11-110-75-75-p-90-iso646.1991-irv
+gelly.pcf.gz -artwiz-gelly-medium-r-normal--10-100-75-75-p-90-iso646.1991-irv
+edges.pcf.gz -artwiz-edges-medium-r-normal--10-100-75-75-m-50-iso646.1991-irv
+nu.pcf.gz nu
+drift.pcf.gz drift
+cure.pcf.gz cure
+aqui.pcf.gz aqui
+lime.pcf.gz -artwiz-lime-medium-r-normal--10-100-75-75-m-50-iso646.1991-irv
+snap.pcf.gz -artwiz-snap-medium-r-normal--10-100-75-75-p-90-iso646.1991-irv</PRE
+></DIV
+><P
+>Ce qui nous intéresse ce sont les entrées qui correspondent à des courtes spécifications de fontes, 
+dans notre cas Nu, Drift, Cure and Aqui. Le problème est qu'elles ne possèdent pas un nom de fontes X11 complet.</P
+><P
+>Changez le fichier comme indiqué ci dessous :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>14
+glisp.pcf.gz -artwiz-glisp-medium-r-normal--11-110-75-75-p-90-iso646.1991-irv
+gelly.pcf.gz -artwiz-gelly-medium-r-normal--10-100-75-75-p-90-iso646.1991-irv
+edges.pcf.gz -artwiz-edges-medium-r-normal--10-100-75-75-m-50-iso646.1991-irv
+nu.pcf.gz -artwiz-nu-medium-r-normal--11-110-75-75-p-90-iso646.1991-irv
+drift.pcf.gz -artwiz-drift-medium-r-normal--11-110-75-75-p-90-iso646.1991-irv
+cure.pcf.gz -artwiz-cure-medium-r-normal--11-110-75-75-p-90-iso646.1991-irv
+aqui.pcf.gz -artwiz-aqui-medium-r-normal--11-110-75-75-p-90-iso646.1991-irv
+lime.pcf.gz -artwiz-lime-medium-r-normal--10-100-75-75-m-50-iso646.1991-irv
+snap.pcf.gz -artwiz-snap-medium-r-normal--10-100-75-75-p-90-iso646.1991-irv</PRE
+><P
+>La dernière manipulation à effectuer est de fixer votre fichier fonts.alias (pour utiliser vos fontes avec un différent encodage que l'iso646).</P
+><P
+>La syntaxe est <TT
+CLASS="USERINPUT"
+><B
+>alias_de_la_fonte nom_de_la_fonte</B
+></TT
+>. Par exemple 
+pour faire fontionner les fontes artwiz avec l'encodage ISO-8859-2 faites ces alias (tout sur une seule ligne).</P
+><PRE
+CLASS="PROGRAMLISTING"
+>-artwiz-anorexia-medium-r-normal--11-110-75-75-p-90-iso8859-2 
+-artwiz-anorexia-medium-r-normal--11-110-75-75-p-90-iso646.1991-irv </PRE
+><P
+>Vous pouvez aussi vous inspirer des fichiers 
+<A
+HREF="http://fluxbox.sourceforge.net/download/fonts.dir"
+TARGET="_top"
+>fonts.dir</A
+>
+et <A
+HREF="http://fluxbox.sourceforge.net/download/fonts.alias"
+TARGET="_top"
+>fonts.alias</A
+>
+, qui supportent l'ISO-8859-1, l'ISO-8859-2, et l'iso10646-1
+(UTF-8). Si vous suivez à la lettre les manipulations ci dessus, vous n'aurez pas à changer vos flags LC_* en C ou POSIX. Et toutes les applications (pas seulement Fluxbox), fontionneront comme elles devraient ; pas de complaintes à propos de "ne peut pas convertir les caractères" ou des messages équivalents.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="faq.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="app-debugging.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Frequently asked questions (FAQ)</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Débuggage</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

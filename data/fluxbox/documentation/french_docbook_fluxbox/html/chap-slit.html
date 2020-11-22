@@ -1,0 +1,293 @@
+<HTML
+><HEAD
+><TITLE
+>Le Slit</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Fond d'écrans"
+HREF="chap-bg.html"><LINK
+REL="NEXT"
+TITLE="Editer les Menus"
+HREF="c625.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="chap-bg.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="c625.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CHAP-SLIT"
+></A
+>Chapter 7. Le Slit</H1
+><P
+>Une des questions les plus fréquemment posées est : "Qu'est-ce que le Slit?". En fait, au moment de l'écriture de ce document, je l'ai déplacée au début la page de FAQ de manière à ce qu'elle pointe sur ce document, de manière à mettre un terme aux dizaines de demandes par jour, et pour tuer le mythe selon lequel le Slit serait un autre nom pour la barre d'outils.</P
+><P
+>Le slit est une des nombreuses parties de Fluxbox héritées de Blackbox. Son but est d'accueillir les Dockapps de WindowMaker ou toute autre application qui fonctionne selon ce mode. C'est à dire les applications qui ont généralement une option <TT
+CLASS="USERINPUT"
+><B
+>-w</B
+></TT
+>.</P
+><P
+> Et bien, la première chose à faire est d'être sûr que Fluxbox est compilé avec cette fonctionnalité. C'est en général le cas. Les packages pour les différentes distributions sont livrés avec, et vous devez enlever le support manuellement.</P
+><P
+> Ainsi, vous pouvez lancer n'importe quelle application 'dockable' (Ceci est aussi connu sous le nom de 'withdraw mode').Par exemple, xmms est livré avec l'application <TT
+CLASS="FILENAME"
+>wmxmms</TT
+>. Lancez simplement <TT
+CLASS="USERINPUT"
+><B
+>wmxmms -w &amp;</B
+></TT
+>, et cela apparaîtra dans le slit.</P
+><P
+>  Le programme populaire <TT
+CLASS="FILENAME"
+>gkrellm</TT
+> supporte une option -w qui permet de le faire fonctionner dans le slit.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN585"
+></A
+>Ou puis-je trouver des dockapps?</H2
+><P
+>La meilleure place pour commencer est le site
+<A
+HREF="http://www.bensinclair.com/dockapp"
+TARGET="_top"
+>the Dockapp
+warehouse</A
+>. Il y a là un vaste choix de différentes dockapps. A part ce site, vous pouvez chercher sur <A
+HREF="http://freshmeat.net/"
+TARGET="_top"
+>Freshmeat</A
+>, ou dans les packages de votre distribution.</P
+><P
+>Le site <A
+HREF="http://bbtools.sourceforge.net"
+TARGET="_top"
+>bbtools</A
+> comprend plein d'utilitaires pour Blackbox/Fluxbox , dont la plupart peuvent fonctionner dans le slit.</P
+><P
+> En outre, si vous avez le support kde, les dockets kde apparaîtront dans le slit.</P
+><P
+><A
+HREF="http://www.dockapps.org/"
+TARGET="_top"
+>Dockapps.Org</A
+> est un nouveau site exclusivement dédié aux dockapps.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN594"
+></A
+>Puis-je changer le comportement du slit ?</H2
+><P
+> Bien sûr. Cliquez simplement avec le bouton droit de la souris sur la portion visible du slit, et sélectionnez les options à partir de là. La plupart de ces options sont les mêmes que celles de la barre d'outils. La seule chose qui diffère est la <TT
+CLASS="COMPUTEROUTPUT"
+>Direction</TT
+>. Le slit peut aller indifféremment de gauche-à-droite <TT
+CLASS="COMPUTEROUTPUT"
+>Horizontal</TT
+> ou de haut-en-bas <TT
+CLASS="COMPUTEROUTPUT"
+>Vertical</TT
+>..
+ </P
+><P
+>Il existe aussi une option <TT
+CLASS="USERINPUT"
+><B
+>maximize over slit</B
+></TT
+> dans le menu de configuration; cela permet aux fenêtres maximisées de recouvrir le slit.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN601"
+></A
+>Je veux que les applications du slit se souviennent de leur ordre!</H2
+><P
+> Depuis la version 0.1.10 de Fluxbox, c'est possible, en utilisant un fichier <TT
+CLASS="FILENAME"
+>slitlist</TT
+>. Voici quelques instructions sur la manière de l'utiliser.</P
+><P
+>L'ordre courant des dockapps est stockés dans un fichier, par défaut
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/slitlist</TT
+>. Qaund des dockapps sont chargées dans le slit, il permet de maintenir l'ordre précedent, en recherchant le nom les dockapps précedemment exécutés.</P
+><P
+>Une procédure simple afin d'avoir la séquence de slit comme vous le voulez :</P
+><DIV
+CLASS="PROCEDURE"
+><P
+><B
+>Ordonner les dockapps</B
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Démarrer fluxbox avec aucunes dockapps préchargées.</P
+></LI
+><LI
+><P
+>Démarrer les dockapps individuellement dans l'ordre que vous désirez.</P
+></LI
+><LI
+><P
+>Reajouter les dockapps à votre script d'auto-démarrage, par exemple .xinitrc or .xsession. L'ordre n'a pas d'intêret ici!</P
+></LI
+></OL
+></DIV
+><P
+>Cette séquence est sauvegardée dans
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/slitlist</TT
+> par défaut et sera maintenue dans les futures sessions de fluxbox.</P
+><P
+>les utilisateurs sont libres d'éditer manuellement leur fichier slitlist. C'est une simple liste de nom de fenêtres, une ligne par dockapp. De même que pour le fichier <TT
+CLASS="FILENAME"
+>init</TT
+>, il doit être édité losque fluxbox ne fonctionne pas. Autrement les changements seront écrasés.</P
+><P
+>L'utilisateur a aussi l'option de choisir un chemin différent pour le fichier liste du slit. L'exemple suivant d'entrée du fichier <TT
+CLASS="FILENAME"
+>init</TT
+> change le chemin :</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN621"
+></A
+><P
+><B
+>Example 7-1. Spécification de la liste du slit</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    session.slitlistFile: /home/moi/etc/slitsort</PRE
+></DIV
+><P
+>Notez qu'il n'y a pas d'option pour désactiver l'ordonnement. L'auteur du patch ne pense pas qu'un ordonnement arbitraire soit bénéfique.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="chap-bg.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c625.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Fond d'écrans</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Editer les Menus</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

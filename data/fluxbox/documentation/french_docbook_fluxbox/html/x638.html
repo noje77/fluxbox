@@ -1,0 +1,187 @@
+<HTML
+><HEAD
+><TITLE
+>Commandes Disponibles</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Editer les Menus"
+HREF="c625.html"><LINK
+REL="PREVIOUS"
+TITLE="Editer les Menus"
+HREF="c625.html"><LINK
+REL="NEXT"
+TITLE="Thèmes"
+HREF="chap-themes.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c625.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 8. Editer les Menus</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="chap-themes.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN638"
+></A
+>Commandes Disponibles</H1
+><P
+>Le menu de Fluxbox est juste un fichier texte qui vous permet d'insérer des sous-menus, de lancer des applications, de contrôler les bureaux, de configurer fluxbox, et de sortir de X. Le menu peut recevoir les commandes suivantes :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    [begin] (TitreduMenu)
+    [submenu]  (NomduSousMenu) {TitreduSousMenu}
+    [exec] (Nom_de_l'Application) {/path/to/programme}
+    [include] (/path/to/fichier_menu)
+    [end]
+    [nop] (--------)
+    [workspaces] (NomduSousMenu)
+    [stylesdir] (/path/to/répertoire_des_styles)
+    [config] (ConfigurationdeFluxbox)
+    [reconfigure] (Reconfiguration)
+    [restart] (Redémarrer)
+    [exit] (Sortir)</PRE
+><P
+>La plupart de ces commandes devraient être suffisamment parlantes sur leur fonction. Les mots entre parenthèses sont ceux qui seront affichés sur votre écran . Je vais expliquer les "items" plus difficiles à comprendre un peu plus loin.</P
+><P
+><TT
+CLASS="USERINPUT"
+><B
+>[nop]</B
+></TT
+> - Ceci vous permet de mettre du texte (ou rien du tout) mais n'exécute absolument rien ; cela agit comme un séparateur dans votre menu.</P
+><P
+><TT
+CLASS="USERINPUT"
+><B
+>[reconfigure]</B
+></TT
+> - Si vous utilisez le menu pour configurer Fluxbox, les changements seront perdus après avoir quitté Fluxbox. Ces changements ont besoin d'être écrit dans le fichier init afin d'être permanents; ceci peut être effectué en choisissant reconfigure après avoir fait les changements.</P
+><P
+><TT
+CLASS="USERINPUT"
+><B
+>[restart]</B
+></TT
+> - Je veux juste être sûr que les gens sachent que restart redémarre seulement Fluxbox, et non le système entier.</P
+><P
+>Et comme toujours, pour plus de référence, nous vous proposons un fichier de menu d'exemple avec Fluxbox.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c625.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="chap-themes.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Editer les Menus</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c625.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Thèmes</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

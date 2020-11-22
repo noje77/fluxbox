@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+# Change your keymap:
+#xmodmap "/home/enki/.Xmodmap"
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#mpv --fullscreen --on-all-workspaces --loop --no-audio --no-osc --no-osd-bar --wid=0 --quiet  /home/enki/.fluxbox/backgrounds/3Dhorse.mp4 &
+#mpv --fullscreen --on-all-workspaces --loop --no-audio --no-osc --no-osd-bar --quiet  /home/enki/.fluxbox/backgrounds/3Dhorse.mp4 &
+#fbsetbg /home/enki/.fluxbox/backgrounds/wallpaper.jpg &
+display -geometry 1920x1080+0+0 -window root /home/enki/.fluxbox/backgrounds/wallpaper.jpg &
+bash /home/enki/.fluxbox/conky/startconky.sh &
+numlockx &
+mate-panel & 
+#system-config-printer-applet &
+#mate-screensaver & 
+xscreensaver -no-splash &
+#compton --backend glx --paint-on-overlay --vsync opengl-mswc &  # pour nouveau
+#compton --backend glx --paint-on-overlay --vsync opengl &  # pour driver porpriétaire nvidiao
+#udisksctl mount -b /dev/sdb2 & # activate if necessary with your own drive
+#udisksctl mount -b /dev/sdd1 & # activate if necessary with your own drive
+#AgentConnectix & #Antidote10 user-agent activate if you use this commercial text corrector.
+bash /home/enki/.fluxbox/applets.sh &
+bash /home/enki/.fluxbox/tint2.sh &
+#./home/enki/.fluxbox/antidote10.sh &
+#tint2 &
+#exec alltray evolution &
+#exec alltray caja --no-desktop /home/enki/GoogleDrive/ &
+
+#
+# Debian-local change:
+#   - fbautostart has been added with a quick hack to check to see if it
+#     exists. If it does, we'll start it up by default.
+which fbautostart > /dev/null
+if [ $? -eq 0 ]; then
+    fbautostart
+fi
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+
+exec fluxbox
+# or if you want to keep a log:
+# exec fluxbox -log "/home/enki/.fluxbox/log"
+
+## try this for animated wallpaper 
+#mplayer multimedia -fs -rootwin /home/enki/Téléchargements/3Dhorse.mp4

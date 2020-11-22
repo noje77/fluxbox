@@ -1,0 +1,385 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Advanced Tabbing</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Tabs"
+HREF="chap-tabs.html"><LINK
+REL="PREVIOUS"
+TITLE="Tabs"
+HREF="chap-tabs.html"><LINK
+REL="NEXT"
+TITLE="Key Bindings"
+HREF="c296.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="chap-tabs.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Tabs</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="c296.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN240"
+>Advanced Tabbing</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN242"
+>Sloppy Window Grouping</A
+></H2
+><A
+NAME="AEN244"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>"But It feels awkward for me to drop the tab onto the small
+other tab."</P
+></BLOCKQUOTE
+><P
+>Good news, then. From the Fluxbox 'configuration' menu, pick
+the 'Sloppy Window Grouping' Option. This allows you to drop your
+tab anywhere on the target window to perform the grouping.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN247"
+>Tabbing single window classes</A
+></H2
+><A
+NAME="AEN249"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>"That's great, but I only want to tab program X!"</P
+></BLOCKQUOTE
+><P
+> There's two different ways you can accomplish this,
+depending on how many programs you want to have tabs. You can
+either switch tabs on/off by window. (Right click on titlebar,
+click 'tab' option), <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>or</I
+></SPAN
+> you can turn them off
+globally with 'Configuration'-&#62;'Use Tabs'. After turning them off,
+You can turn tabs on for individual windows as described
+above.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN253"
+>Turning tabs off entirely</A
+></H2
+><A
+NAME="AEN255"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>"I don't think I like tabs. Can I turn them off?"</P
+></BLOCKQUOTE
+><P
+>Certainly. Select 'Use Tabs' from the Fluxbox
+'Configuration' menu. As this is a toggle, selecting it again will
+turn tabs back on. There is also a setting in the
+<TT
+CLASS="FILENAME"
+>init</TT
+> configuration file for this:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    session.tabs:   true</PRE
+><P
+>Disabling tabs can be accomplished by replacing
+<KBD
+CLASS="USERINPUT"
+>true</KBD
+> with
+<KBD
+CLASS="USERINPUT"
+>false</KBD
+>.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN263"
+>Tab Placement</A
+></H2
+><P
+>In versions up to 0.1.14 the tabs actually were attached to the window,
+from 0.9.x tabs are embedded into the window titlebar.</P
+><P
+>(0.1.14) There's a configuration menu option that's called 'Tab
+Placement'. These are places on the window where the tabs will be
+located. This is pretty straightforward, so the only thing we
+really need to mention is the 'Relative' options. These options
+make it so that the total length of all tabs on the window is
+equal to the length of the window. As in, if there's one tab on a
+window, the tab is the length of the window. If there are two
+tabs, each tab's length is 50% of the window length. This option
+often makes the tabs look unobtrusive and is very popular.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN267"
+>Tab Autogrouping</A
+></H2
+><P
+>Sometimes you'd like some apps to be automatically grouped
+together when they start. This is logically called "Autogrouping".
+This part explains how it works. First of all, you need Fluxbox
+v0.1.11 or higher. Autogrouping doesn't work with older versions.
+Then you need to create a <TT
+CLASS="FILENAME"
+>~/.fluxbox/groups</TT
+>
+file if it is not there already. Then, edit your
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+> file and add this line (or
+change it if it's there and looking different):</P
+><PRE
+CLASS="PROGRAMLISTING"
+>         session.groupFile:		~/.fluxbox/groups</PRE
+><P
+> Okay, everything is in place. Now you simply have to fill in
+the groups file.</P
+><H3
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN274"
+></A
+>Groupfile format</H3
+><P
+>  There is one group for each line in the file and you just
+type the instance name of the program to be grouped.
+Example:</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN276"
+></A
+><P
+><B
+>Example 4-1. <TT
+CLASS="FILENAME"
+>groups</TT
+> file</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    Navigator nedit
+    xterm</PRE
+></DIV
+><P
+> This will make two groups, one with
+<TT
+CLASS="FILENAME"
+>netscape</TT
+> and <TT
+CLASS="FILENAME"
+>nedit</TT
+> and
+one with <TT
+CLASS="FILENAME"
+>xterm</TT
+>. The new window will only
+group itself to other windows on the same workspace and to the
+last window that was focused.  You get the name to put in the
+group file with:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    xprop |awk '/WM_CLASS/{print $4}'</PRE
+><P
+>and click on the window. If this does not display anything,
+try changing the <KBD
+CLASS="USERINPUT"
+>$4</KBD
+> to
+<KBD
+CLASS="USERINPUT"
+>$3</KBD
+>.</P
+><H3
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN288"
+></A
+>Autogrouping from Tabs</H3
+><P
+>This will allow you to popup the root menu, if you right
+click on the tab and select an application  it'll start
+grouped to the tab. </P
+><DIV
+CLASS="NOTE"
+><BLOCKQUOTE
+CLASS="NOTE"
+><P
+><B
+>Note: </B
+> Grouping this way (from tabs) might interfere with
+normal autogrouping in a bad way.</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN292"
+>Tabs in Themes</A
+></H2
+><P
+>We have an entire section (<A
+HREF="chap-themes.html"
+>Chapter 10</A
+>)
+devoted to the way tabs look in themes. You can check it out if
+you're interested in changing the way the tabs look in your theme.
+(Tabs in themes will normally default to what the titlebars look
+like; sometimes people like to change that.)</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="chap-tabs.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c296.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Tabs</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="chap-tabs.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Key Bindings</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

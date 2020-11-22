@@ -1,0 +1,217 @@
+<HTML
+><HEAD
+><TITLE
+>fbrun</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Outils"
+HREF="c133.html"><LINK
+REL="PREVIOUS"
+TITLE="Outils"
+HREF="c133.html"><LINK
+REL="NEXT"
+TITLE="fluxbox-generate_menu"
+HREF="x161.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c133.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Outils</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x161.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN141"
+></A
+><TT
+CLASS="FILENAME"
+>fbrun</TT
+></H1
+><P
+><TT
+CLASS="FILENAME"
+>fbrun</TT
+> est l'équivalent de la boite de dialogue "Run..." présente dans d'autres gestionnaires de fenêtres. C'est un moyen aisé de démarrer des programmes qui ne sont pas présent dans le menu racine (ou nécessitant un certain réglage de paramètres pour une exécution particulière).</P
+><P
+>Une autre manière d'employer <TT
+CLASS="FILENAME"
+>fbrun</TT
+> peut être utile
+afin d'appeller depuis le menu une commande que vous pourrez éditer puis exécuter.
+ Un exemple pourrait être l'exécution de ssh sur un nom d'hôte très long et avec de nombreuses options changeant tout le temps. Dans ce cas, vous pouvez ajouter une entrée au menu avec fbrun contenant toutes les options et le nom d'hôte. Quand vous utiliserez cette entrée, vous pourrez éditer la ligne et l'exécuter.</P
+><P
+><TT
+CLASS="FILENAME"
+>fbrun</TT
+> a plusieurs options :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>   -font [nom de la fonte]     Fonte du texte
+   -title [nom du titre]       Nom du titre
+   -text [texte]               Texte à exécuter
+   -w [largeur]                Largeur de la fenêtre en pixels
+   -h [hauteur]                Hauteur de la fenêtre en pixels
+   -display [affichage]        Nom de l'affichage
+   -pos [x] [y]                Position de la fenêtre en pixel
+   -fg [couleur]               Couleur du texte
+   -bg [couleur]               Couleur de l'arrière plan
+   -a                          Lissage des fontes
+   -hf [historique]            Fichier d'historique à charger (défaut ~/.fluxbox/history)
+   -help                       Affiche cette aide</PRE
+><P
+>La plupart de ces options devraient être suffisamment explicatives. Les options <TT
+CLASS="USERINPUT"
+><B
+>-text</B
+></TT
+> et <TT
+CLASS="USERINPUT"
+><B
+>-hf</B
+></TT
+> nécessitent certainement plus d'explications. La première est utilisée pour spécifier le texte préchargé (et éditable) à l'intérieur de la fenêtre de <TT
+CLASS="FILENAME"
+>fbrun</TT
+>. Si vous désirez entrer des arguments multiples (comme <TT
+CLASS="USERINPUT"
+><B
+>ssh -X -f</B
+></TT
+> ), soyez sûr d'encadrer votre commande par des guillemets :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>	fbrun -text "ssh -X -f"</PRE
+><P
+>L'option <TT
+CLASS="USERINPUT"
+><B
+>-hf</B
+></TT
+> détermine le fichier d'historique, qui est l'endroit où <TT
+CLASS="FILENAME"
+>fbrun</TT
+> garde en mémoire les commandes que vous avez utilisé (de la même manière que bash).
+Si vous n'utilisez pas cette option, alors le fichier par défaut sera utilisé. Elle peut devenir utile si vous possédez de multiples entrées <TT
+CLASS="FILENAME"
+>fbrun</TT
+> dans votre menu et que vous souhaitez séparer les historiques pour chacunes d'entre elles.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c133.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x161.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Outils</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c133.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>fluxbox-generate_menu</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

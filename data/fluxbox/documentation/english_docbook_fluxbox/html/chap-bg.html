@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Desktop Backgrounds</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Actions"
+HREF="x359.html"><LINK
+REL="NEXT"
+TITLE="The Slit"
+HREF="chap-slit.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x359.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="chap-slit.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CHAP-BG"
+></A
+>Chapter 6. Desktop Backgrounds</H1
+><P
+> Fluxbox, like Blackbox, just has two wrapper utilities for
+this - <TT
+CLASS="FILENAME"
+>fbsetroot</TT
+> and
+<TT
+CLASS="FILENAME"
+>fbsetbg</TT
+>. Let's see how they work.</P
+><P
+><TT
+CLASS="FILENAME"
+>fbsetroot</TT
+> is about the equivalent of
+<TT
+CLASS="FILENAME"
+>xsetroot</TT
+>, which can set backgrounds as long as they're
+simple, like a solid color.  <TT
+CLASS="FILENAME"
+>fbsetroot</TT
+> can also set
+gradients. </P
+><P
+><TT
+CLASS="FILENAME"
+>fbsetbg</TT
+> 
+ is a wrapper that tries to find a suitable background-setting app and
+then tries to set the wallpaper using that app. You don't  have  to  configure
+<TT
+CLASS="FILENAME"
+>fbsetbg</TT
+>.  It  just  uses  the  first app it can find.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN661"
+></A
+>Overriding theme backgrounds</H2
+><P
+>Fluxbox allows to ignore the background specified in a style file
+by specifying it in your
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+> file:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>        session.screen0.rootCommand: fbsetbg -f ~/backgrounds/zimdib_dark.png</PRE
+><P
+>To avoid having to change the <TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+> file,
+<TT
+CLASS="FILENAME"
+>fbsetbg</TT
+> will store the used wallpaper in 
+<TT
+CLASS="FILENAME"
+>~/.fluxbox/lastwallpaper</TT
+> and a reload it
+when called with option <KBD
+CLASS="USERINPUT"
+>-l</KBD
+>. The rootCommand
+should then be.</P
+><PRE
+CLASS="PROGRAMLISTING"
+>        session.screen0.rootCommand: fbsetbg -l</PRE
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x359.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="chap-slit.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Actions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Slit</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

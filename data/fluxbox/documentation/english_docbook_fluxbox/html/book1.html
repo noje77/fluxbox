@@ -1,0 +1,615 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Fluxbox Documentation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="NEXT"
+TITLE="Introduction"
+HREF="c28.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="BOOK"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="BOOK"
+><A
+NAME="AEN1"
+></A
+><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="TITLE"
+><A
+NAME="AEN2"
+>Fluxbox Documentation</A
+></H1
+><H3
+CLASS="AUTHOR"
+><A
+NAME="AEN7"
+></A
+>Tobias Klausmann</H3
+><H4
+CLASS="EDITEDBY"
+>Edited by</H4
+><H3
+CLASS="EDITOR"
+>Engelbert Gruber</H3
+><HR></DIV
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+>1. <A
+HREF="c28.html"
+>Introduction</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c28.html#AEN30"
+>About this documentation</A
+></DT
+><DT
+><A
+HREF="x47.html"
+>About Fluxbox</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="x47.html#AEN49"
+>What is Fluxbox</A
+></DT
+><DT
+><A
+HREF="x47.html#AEN53"
+>Features</A
+></DT
+><DT
+><A
+HREF="x47.html#AEN84"
+>Getting Fluxbox</A
+></DT
+><DT
+><A
+HREF="x47.html#AEN88"
+>Asking questions and getting support</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>2. <A
+HREF="c92.html"
+>Getting started</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c92.html#AEN94"
+>Installing Fluxbox</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c92.html#AEN99"
+>Acquiring the sources</A
+></DT
+><DT
+><A
+HREF="c92.html#AEN104"
+>Extract and compile</A
+></DT
+><DT
+><A
+HREF="c92.html#AEN116"
+>Running Fluxbox</A
+></DT
+><DT
+><A
+HREF="c92.html#AEN144"
+>Adding to KDE Displaymanager</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="x154.html"
+>Commandline options</A
+></DT
+></DL
+></DD
+><DT
+>3. <A
+HREF="c159.html"
+>Tools</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c159.html#AEN161"
+>Introduction</A
+></DT
+><DT
+><A
+HREF="x167.html"
+><TT
+CLASS="FILENAME"
+>fbrun</TT
+></A
+></DT
+><DT
+><A
+HREF="sect-fbgm.html"
+>fluxbox-generate_menu</A
+></DT
+><DT
+><A
+HREF="sect-fluxspace.html"
+>fluxspace</A
+></DT
+><DT
+><A
+HREF="sect-wmctrl.html"
+>wmctrl</A
+></DT
+><DT
+><A
+HREF="sect-pager.html"
+>Pagers</A
+></DT
+></DL
+></DD
+><DT
+>4. <A
+HREF="chap-tabs.html"
+>Tabs</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="chap-tabs.html#AEN231"
+>An introduction to tabs</A
+></DT
+><DT
+><A
+HREF="x240.html"
+>Advanced Tabbing</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="x240.html#AEN242"
+>Sloppy Window Grouping</A
+></DT
+><DT
+><A
+HREF="x240.html#AEN247"
+>Tabbing single window classes</A
+></DT
+><DT
+><A
+HREF="x240.html#AEN253"
+>Turning tabs off entirely</A
+></DT
+><DT
+><A
+HREF="x240.html#AEN263"
+>Tab Placement</A
+></DT
+><DT
+><A
+HREF="x240.html#AEN267"
+>Tab Autogrouping</A
+></DT
+><DT
+><A
+HREF="x240.html#AEN292"
+>Tabs in Themes</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>5. <A
+HREF="c296.html"
+>Key Bindings</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c296.html#AEN298"
+>The Keygrabber</A
+></DT
+><DT
+><A
+HREF="x328.html"
+>Key Names</A
+></DT
+><DT
+><A
+HREF="x359.html"
+>Actions</A
+></DT
+></DL
+></DD
+><DT
+>6. <A
+HREF="chap-bg.html"
+>Desktop Backgrounds</A
+></DT
+><DT
+>7. <A
+HREF="chap-slit.html"
+>The Slit</A
+></DT
+><DT
+>8. <A
+HREF="chap-toolbar.html"
+>The Toolbar</A
+></DT
+><DT
+>9. <A
+HREF="c739.html"
+>Editing Menus</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c739.html#AEN746"
+>Setting the Menu File Location</A
+></DT
+><DT
+><A
+HREF="x756.html"
+>Available Commands</A
+></DT
+></DL
+></DD
+><DT
+>10. <A
+HREF="chap-themes.html"
+>Themes</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="chap-themes.html#AEN799"
+>Theme basics</A
+></DT
+><DT
+><A
+HREF="x835.html"
+>Advanced Theme Editing</A
+></DT
+></DL
+></DD
+><DT
+>A. <A
+HREF="app-setup.html"
+>Setting up
+<TT
+CLASS="FILENAME"
+>.xinitrc</TT
+>/<TT
+CLASS="FILENAME"
+>.xsession</TT
+></A
+></DT
+><DT
+>B. <A
+HREF="faq.html"
+>Frequently asked questions (FAQ)</A
+></DT
+><DT
+>C. <A
+HREF="app-themeref.html"
+>Theme Reference</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="app-themeref.html#AEN1129"
+>Theme directives</A
+></DT
+></DL
+></DD
+><DT
+>D. <A
+HREF="app-artwiz.html"
+>Artwiz fonts for Fluxbox</A
+></DT
+><DT
+>E. <A
+HREF="app-debugging.html"
+>Debugging</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="LOT"
+><DL
+CLASS="LOT"
+><DT
+><B
+>List of Tables</B
+></DT
+><DT
+>5-1. <A
+HREF="x359.html#AEN364"
+>Navigation</A
+></DT
+><DT
+>5-2. <A
+HREF="x359.html#AEN454"
+>Window Operations</A
+></DT
+><DT
+>5-3. <A
+HREF="x359.html#AEN510"
+>Window Sizing</A
+></DT
+><DT
+>5-4. <A
+HREF="x359.html#AEN562"
+>Window Movement</A
+></DT
+><DT
+>5-5. <A
+HREF="x359.html#AEN598"
+>Miscellaneous</A
+></DT
+><DT
+>10-1. <A
+HREF="x835.html#AEN868"
+>Texture directives</A
+></DT
+><DT
+>C-1. <A
+HREF="app-themeref.html#AEN1133"
+>Toolbar styles</A
+></DT
+><DT
+>C-2. <A
+HREF="app-themeref.html#AEN1363"
+>Menu styles</A
+></DT
+><DT
+>C-3. <A
+HREF="app-themeref.html#AEN1472"
+>Window styles</A
+></DT
+><DT
+>C-4. <A
+HREF="app-themeref.html#AEN1535"
+>Handlebar styles</A
+></DT
+><DT
+>C-5. <A
+HREF="app-themeref.html#AEN1556"
+>Resize grip styles</A
+></DT
+><DT
+>C-6. <A
+HREF="app-themeref.html#AEN1580"
+>Window button styles</A
+></DT
+><DT
+>C-7. <A
+HREF="app-themeref.html#AEN1621"
+>Window frame styles</A
+></DT
+><DT
+>C-8. <A
+HREF="app-themeref.html#AEN1633"
+>Tab styles</A
+></DT
+><DT
+>C-9. <A
+HREF="app-themeref.html#AEN1672"
+>Font on window label styles</A
+></DT
+><DT
+>C-10. <A
+HREF="app-themeref.html#AEN1687"
+>Miscellaneous styles</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="LOT"
+><DL
+CLASS="LOT"
+><DT
+><B
+>List of Examples</B
+></DT
+><DT
+>4-1. <A
+HREF="x240.html#AEN276"
+><TT
+CLASS="FILENAME"
+>groups</TT
+> file</A
+></DT
+><DT
+>5-1. <A
+HREF="c296.html#AEN307"
+>macro command</A
+></DT
+><DT
+>5-2. <A
+HREF="c296.html#AEN314"
+>A Fluxbox keysfile</A
+></DT
+><DT
+>5-3. <A
+HREF="c296.html#AEN320"
+>XMMS keybindings</A
+></DT
+><DT
+>5-4. <A
+HREF="c296.html#AEN324"
+>Multimedia keys for XMMS</A
+></DT
+><DT
+>5-5. <A
+HREF="x328.html#AEN332"
+><TT
+CLASS="FILENAME"
+>xev</TT
+> output for the
+right arrow key</A
+></DT
+><DT
+>7-1. <A
+HREF="chap-slit.html#AEN722"
+>Slitlist specification</A
+></DT
+><DT
+>8-1. <A
+HREF="chap-toolbar.html#AEN733"
+>toolbar tools example</A
+></DT
+><DT
+>9-1. <A
+HREF="c739.html#AEN751"
+>Setting the menu file</A
+></DT
+><DT
+>9-2. <A
+HREF="x756.html#AEN791"
+><TT
+CLASS="FILENAME"
+>menu</TT
+></A
+></DT
+><DT
+>10-1. <A
+HREF="x835.html#AEN844"
+>Toolbar Clock style</A
+></DT
+><DT
+>10-2. <A
+HREF="x835.html#AEN849"
+>Menu style</A
+></DT
+><DT
+>10-3. <A
+HREF="x835.html#AEN856"
+>Font style</A
+></DT
+><DT
+>10-4. <A
+HREF="x835.html#AEN864"
+>Texture style</A
+></DT
+><DT
+>10-5. <A
+HREF="x835.html#AEN903"
+>Typical short style</A
+></DT
+><DT
+>A-1. <A
+HREF="app-setup.html#AEN960"
+><TT
+CLASS="FILENAME"
+>.xinitrc</TT
+></A
+></DT
+><DT
+>B-1. <A
+HREF="faq.html#AEN1104"
+>Customized tabs in style file</A
+></DT
+><DT
+>D-1. <A
+HREF="app-artwiz.html#AEN1776"
+><TT
+CLASS="FILENAME"
+>fonts.dir</TT
+></A
+></DT
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c28.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Introduction</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

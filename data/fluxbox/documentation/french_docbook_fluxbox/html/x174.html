@@ -1,0 +1,326 @@
+<HTML
+><HEAD
+><TITLE
+>Manipulation avancée des Onglets</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Les onglets"
+HREF="chap-tabs.html"><LINK
+REL="PREVIOUS"
+TITLE="Les onglets"
+HREF="chap-tabs.html"><LINK
+REL="NEXT"
+TITLE="Affectation des touches"
+HREF="c223.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="chap-tabs.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Les onglets</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="c223.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN174"
+></A
+>Manipulation avancée des Onglets</H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN176"
+></A
+>Sloppy Window Grouping (Placement stupide des onglets)</H2
+><A
+NAME="AEN178"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>"Mais c'est épuisant pour moi de glisser l'onglet sur les autres.."</P
+></BLOCKQUOTE
+><P
+> Bonne nouvelle. A partir du menu 'configuration' de Fluxbox, cochez l'option 'Sloppy Window Grouping'. Ceci vous permettra de glisser l'onglet sur n'importe quel endroit de la fenêtre pour effectuer le groupement. </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN181"
+></A
+>Manipulation des onglets pour des fenêtres solitaires</H2
+><A
+NAME="AEN183"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>"C'est super, mais je veux seulement mettre en onglet le programme X!"</P
+></BLOCKQUOTE
+><P
+>  Il y a deux manières d'accomplir cela, dépendant du nombre de programmes pour lesquels vous voulez avoir des onglets. Vous pouvez activer/désactiver les onglets une fenêtre à la fois (cliquez avec le bouton droit sur la barre des titres, ensuite cliquez sur l'option 'Onglet'), OU vous pouvez les désactiver globalement avec 'configuration'-&#62;'Utiliser les onglets'. Après les avoir désactivé, vous pouvez les réactiver individuellement comme décrit plus haut.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN186"
+></A
+>Désactiver les onglets entiérement</H2
+><A
+NAME="AEN188"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>"Je n'aime pas les onglets. Puis je les désactiver ?"</P
+></BLOCKQUOTE
+><P
+>Certainement. Selectionnez l'option "Utiliser les onglets" du menu "Configuration" de Fluxbox.
+La selectionner une nouvelle fois activera les onglets. Il y a aussi une option pour cela dans le fichier <TT
+CLASS="FILENAME"
+>init</TT
+>:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    session.tabs:   true</PRE
+><P
+>Désactiver les onglets peut être accomplis en remplaçant
+<TT
+CLASS="USERINPUT"
+><B
+>true</B
+></TT
+> (vrai) par
+<TT
+CLASS="USERINPUT"
+><B
+>false</B
+></TT
+> (faux).</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN196"
+></A
+>Position des onglets</H2
+><P
+>Il y a une option du menu de configuration qui s'appelle "Tab Placement". Elle définit l'emplacement des onglets sur les fenêtres. C'est relativement trivial, la seule chose à préciser est l'option 'Relative'. Cette option indique que la longueur totale de tous les onglets d'une fenêtre est égale à la longueur de celle-ci. Si il n'y a qu'un seul onglet sur la fenêtre, cet onglet prendra toute la longueur de celle-ci. Si il y a deux onglets sur la fenêtre, chacun d'entre eux prendra 50% de la longueur de celle-ci. Cette option permet aux onglets d'être relativement discrets et est très populaire.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN199"
+></A
+>Groupement automatique des Onglets</H2
+><P
+> Vous pouvez avoir envie de grouper certaines applications dès le démarage. C'est possible et cela s'appelle en toute logique groupement automatique (Autogrouping). Cette partie explique comment ça marche. Avant tout, vous devez avoir Fluxbox v0.1.11 ou plus. Le groupement automatique ne marche pas avec les versions plus anciennes. Ensuite vous devez créer le fichier <TT
+CLASS="FILENAME"
+>~/.fluxbox/groups</TT
+> si il n'existe pas déjà. Puis, éditez votre fichier <TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+> et ajoutez cette ligne :</P
+><PRE
+CLASS="PROGRAMLISTING"
+>         session.groupFile:		~/.fluxbox/groups</PRE
+><P
+>  Ok, tout est en place. Maintenant vous devez simplement remplir le fichier de groupement.</P
+><H3
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN206"
+></A
+>Format du fichier de groupement</H3
+><P
+>   Il y a un groupe par ligne et il faut juste taper le nom de l'instance du programme qui devra être groupé. Exemple :</P
+><DIV
+CLASS="EXAMPLE"
+><A
+NAME="AEN208"
+></A
+><P
+><B
+>Example 4-1. Exemple des fichiers de groupement</B
+></P
+><PRE
+CLASS="PROGRAMLISTING"
+>    Navigator nedit
+    xterm</PRE
+></DIV
+><P
+>  Cela va créer deux groupes, un avec netscape et nedit et un autre avec xterm. La nouvelle fenêtre sera uniquement groupée avec les autres fenêtres du même bureau et à la derniere fenêtre selectionnée.
+Le nom des instances a ajouter dans le fichier sont donné par:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>    xprop |awk '/WM_CLASS/{print $4}'</PRE
+><P
+>et  par un clic sur la fenêtre. Si cela n'affiche rien du tout, essayez de modifier <TT
+CLASS="USERINPUT"
+><B
+>$4</B
+></TT
+> par <TT
+CLASS="USERINPUT"
+><B
+>$3</B
+></TT
+>.</P
+><H3
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN216"
+></A
+>Groupement Automatique depuis les Onglets</H3
+><P
+> Cela vous permet de faire apparaitre le menu principal en faisant un clic droit sur l'onglet. En selectionnant une application, elle démarrera groupée à l'onglet.</P
+><DIV
+CLASS="NOTE"
+><BLOCKQUOTE
+CLASS="NOTE"
+><P
+><B
+>Note: </B
+> Grouper de cette manière peut mal interférer avec le groupement automatique normal.</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN220"
+></A
+>Onglets et thèmes</H2
+><P
+>  Nous avons un document entièrement consacré à l'apparence des onglets lorsqu'ils sont utilisés avec les thèmes. Vous pouvez y jeter un coup d'oeil si vous êtes intéressés par le changement de l'apparence des onglets dans vos thèmes. (Les onglets dans les thèmes ont généralement l'apparence des barres de titre ; parfois les gens aimeraient bien changer ce comportement.)</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="chap-tabs.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c223.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Les onglets</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="chap-tabs.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Affectation des touches</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

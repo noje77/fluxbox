@@ -1,0 +1,206 @@
+<HTML
+><HEAD
+><TITLE
+>Fond d'écrans</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="Actions"
+HREF="x276.html"><LINK
+REL="NEXT"
+TITLE="Le Slit"
+HREF="chap-slit.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x276.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="chap-slit.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CHAP-BG"
+></A
+>Chapter 6. Fond d'écrans</H1
+><P
+> Fluxbox, tout comme blackbox, a deux utilitaires pour cela-- En fait, ils ont le même nom que ceux de blackbox : bsetroot et bsetbg. Regardons ensemble leurs fonctionnements.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN554"
+></A
+><TT
+CLASS="FILENAME"
+>bsetroot</TT
+></H2
+><P
+> bsetroot est à peu près l'équivalent de xsetroot- Il peut mettre en place des fonds d'écrans seulement si ils sont simples, comme une couleur unie. bsetroot peut aussi gérer les dégradés.</P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN557"
+></A
+><TT
+CLASS="FILENAME"
+>bsetbg</TT
+></H2
+><P
+><TT
+CLASS="FILENAME"
+>bsetbg</TT
+> est un programme de plus haut niveau. C'est en fait une encapsulation d'autres utilitaires qui peuvent mettre en place des images de fond, comme <TT
+CLASS="FILENAME"
+>wmsetbg</TT
+>,
+<TT
+CLASS="FILENAME"
+>Esetroot</TT
+>, le programme <TT
+CLASS="FILENAME"
+>display</TT
+> d'ImageMagick, etc. La première fois qu'il est exécuté, il crée un fichier de configuration <TT
+CLASS="FILENAME"
+>~/.fluxbox/bsetbg</TT
+>, qui va déterminer quels programmes il peut utiliser. Vous pouvez éditer ce fichier pour sélectionner lequel utiliser (NOTE: pour les applications qui gèrent la 'transparence', comme <TT
+CLASS="FILENAME"
+>xchat</TT
+> et <TT
+CLASS="FILENAME"
+>Eterm</TT
+> avec la transparence, vous devez utiliser <TT
+CLASS="FILENAME"
+>wmsetbg</TT
+> ou <TT
+CLASS="FILENAME"
+>Esetroot</TT
+>. </P
+><H2
+CLASS="BRIDGEHEAD"
+><A
+NAME="AEN569"
+></A
+>Passer outre les fond d'écrans des thèmes</H2
+><P
+>  Un des inconvénients de blackbox est la totale dépendance du fond d'écran par rapport au thème. Lorsque vous changez de thème, vous héritez du fond d'écran que l'auteur du thème à jugé bon de mettre. La plupart des personnes n'aiment pas ce comportement. Et bien Fluxbox procure un moyen de résoudre de cela. Ajoutez une ligne pareille à celle-là dans votre fichier <TT
+CLASS="FILENAME"
+>~/.fluxbox/init</TT
+> : </P
+><PRE
+CLASS="PROGRAMLISTING"
+>        session.screen0.rootCommand: bsetbg -f ~/backgrounds/zimdib_dark.png</PRE
+><P
+> Et ce que vous avez mis là sera votre image de fond, peu importe l'avis de l'auteur du thème.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x276.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="chap-slit.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Actions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Le Slit</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

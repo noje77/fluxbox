@@ -1,0 +1,882 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Actions</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Key Bindings"
+HREF="c296.html"><LINK
+REL="PREVIOUS"
+TITLE="Key Names"
+HREF="x328.html"><LINK
+REL="NEXT"
+TITLE="Desktop Backgrounds"
+HREF="chap-bg.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x328.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 5. Key Bindings</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="chap-bg.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN359"
+>Actions</A
+></H1
+><P
+>These are the actions currently provided by Fluxbox. They
+cover most of the stuff one might want to place on keypresses.
+Note that in the keybindings file, the last character before the
+action should be a <KBD
+CLASS="USERINPUT"
+>:</KBD
+>.</P
+><P
+>Actions are case insensitive.</P
+><DIV
+CLASS="TABLE"
+><A
+NAME="AEN364"
+></A
+><P
+><B
+>Table 5-1. Navigation</B
+></P
+><TABLE
+BORDER="0"
+FRAME="void"
+CLASS="CALSTABLE"
+><COL><COL><THEAD
+><TR
+><TH
+>Action</TH
+><TH
+>Result</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>Workspace</KBD
+></TD
+><TD
+>Go to a particular workspace. Use :Workspace 1, :Workspace 2, etc.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>NextTab</KBD
+></TD
+><TD
+>Switch to the Next Tab in the current group.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>PrevTab</KBD
+></TD
+><TD
+>Switch to the Previous Tab in the current group.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>NextWindow N</KBD
+></TD
+><TD
+>Go to
+Next Window. See <A
+HREF="x359.html#KEYS-NOTE-1"
+>Note 1</A
+>.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>PrevWindow N</KBD
+></TD
+><TD
+>Go to previous window. Again, see <A
+HREF="x359.html#KEYS-NOTE-1"
+>Note 1</A
+>.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>NextWorkspace</KBD
+></TD
+><TD
+>Go to the Next Workspace.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>PrevWorkspace</KBD
+></TD
+><TD
+>Go to the Previous Workspace.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>NextGroup</KBD
+>, <KBD
+CLASS="USERINPUT"
+>PrevGroup</KBD
+> </TD
+><TD
+>Go to the next/prev window group.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>LeftWorkspace</KBD
+></TD
+><TD
+>Same as PrevWorkspace.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>RightWorkspace</KBD
+></TD
+><TD
+>Same as NextWorkspace.</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><DIV
+CLASS="NOTE"
+><BLOCKQUOTE
+CLASS="NOTE"
+><A
+NAME="KEYS-NOTE-1"
+></A
+><P
+><B
+>1.
+<KBD
+CLASS="USERINPUT"
+>NextWindow</KBD
+> /
+<KBD
+CLASS="USERINPUT"
+>PrevWindow</KBD
+>: </B
+>The
+<KBD
+CLASS="USERINPUT"
+>NextWindow</KBD
+>/<KBD
+CLASS="USERINPUT"
+>PrevWindow</KBD
+>
+has a numerical argument, which is a bit too complicated to be
+explained inside that table above.  Here's how it works.</P
+><P
+>The integer parameter to configure the behaviour:</P
+><DIV
+CLASS="INFORMALTABLE"
+><P
+></P
+><A
+NAME="AEN423"
+></A
+><TABLE
+BORDER="0"
+FRAME="void"
+CLASS="CALSTABLE"
+><COL><COL><THEAD
+><TR
+><TH
+>Parameter value</TH
+><TH
+>Behaviour</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+>0 or unspecified</TD
+><TD
+>Default/current behavior - no skipping</TD
+></TR
+><TR
+><TD
+>1</TD
+><TD
+>Skip lower tabs</TD
+></TR
+><TR
+><TD
+>2</TD
+><TD
+>Skip stuck windows</TD
+></TR
+><TR
+><TD
+>3</TD
+><TD
+>Skip lower tabs/stuck windows</TD
+></TR
+><TR
+><TD
+>4</TD
+><TD
+>Skip shaded windows</TD
+></TR
+><TR
+><TD
+>5</TD
+><TD
+>Skip lower tabs/shaded windows</TD
+></TR
+><TR
+><TD
+>6</TD
+><TD
+>Skip stuck windows/shaded windows</TD
+></TR
+><TR
+><TD
+>7</TD
+><TD
+>Skip lower tabs/stuck windows/shaded windows</TD
+></TR
+></TBODY
+></TABLE
+><P
+></P
+></DIV
+></BLOCKQUOTE
+></DIV
+><DIV
+CLASS="TABLE"
+><A
+NAME="AEN454"
+></A
+><P
+><B
+>Table 5-2. Window Operations</B
+></P
+><TABLE
+BORDER="0"
+FRAME="void"
+CLASS="CALSTABLE"
+><COL><COL><THEAD
+><TR
+><TH
+>Action</TH
+><TH
+>Result</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>Close</KBD
+></TD
+><TD
+>Close the Window.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>KillWindow</KBD
+></TD
+><TD
+>The
+equivalent of calling <TT
+CLASS="FILENAME"
+>xkill</TT
+> and clicking on the window.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>Minimize</KBD
+></TD
+><TD
+>Also known as "iconify". Make the window iconified.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>ShadeWindow</KBD
+></TD
+><TD
+>Put window in the 'shaded' state, or restore from the 'shaded' state.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>StickWindow</KBD
+></TD
+><TD
+>Toggle a Window's 'sticky' state.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>ToggleDecor</KBD
+></TD
+><TD
+>Toggle whether or not current window has a border, buttons, and titlebar.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>Raise</KBD
+></TD
+><TD
+>Bring the window to the 'Top', it will appear 'Above' windows that it overlaps.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>Lower</KBD
+></TD
+><TD
+>Opposite of Raise.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>NextTab</KBD
+>, <KBD
+CLASS="USERINPUT"
+>PrevTab</KBD
+></TD
+><TD
+>Activate next, prev tab.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>MoveTabLeft</KBD
+>, <KBD
+CLASS="USERINPUT"
+>MoveTabRight</KBD
+></TD
+><TD
+>Move activate tab by the
+<KBD
+CLASS="USERINPUT"
+>n</KBD
+> tabs left/right.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>DetachClient</KBD
+> </TD
+><TD
+>Take client out of tab-group.</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><DIV
+CLASS="TABLE"
+><A
+NAME="AEN510"
+></A
+><P
+><B
+>Table 5-3. Window Sizing</B
+></P
+><TABLE
+BORDER="0"
+FRAME="void"
+CLASS="CALSTABLE"
+><COL><COL><THEAD
+><TR
+><TH
+>Action</TH
+><TH
+>Result</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>MaximizeHorizontal</KBD
+></TD
+><TD
+>Maximize
+the window horizontally.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>MaximizeVertical</KBD
+></TD
+><TD
+>Maximize
+the window vertically.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>MaximizeWindow</KBD
+></TD
+><TD
+>Maximize the Window.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>Resize</KBD
+></TD
+><TD
+>Resize the active window by the specified delta, e.g. 
+<KBD
+CLASS="USERINPUT"
+>resize -8 -8</KBD
+>.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>ResizeTo</KBD
+></TD
+><TD
+>Resize the active window to the specified geometry. 
+<KBD
+CLASS="USERINPUT"
+>resize -8 -8</KBD
+>.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>ResizeHorizontal</KBD
+></TD
+><TD
+>Resize horizontal by the specified delta.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>ResizeVertical</KBD
+></TD
+><TD
+>Resize vertical by the specified delta.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>ArrangeWindows</KBD
+></TD
+><TD
+>Tile Windows magically.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>ShowDesktop</KBD
+></TD
+><TD
+>Iconify all windows.</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><DIV
+CLASS="NOTE"
+><BLOCKQUOTE
+CLASS="NOTE"
+><A
+NAME="KEYS-NOTE-RESIZE-UNIT"
+></A
+><P
+><B
+>Note: </B
+>When resizing "one unit" might be different for different applications.
+<TT
+CLASS="FILENAME"
+>xterm</TT
+>/<TT
+CLASS="FILENAME"
+>aterm</TT
+>/<TT
+CLASS="FILENAME"
+>Eterm</TT
+>
+instead of resizing by one pixel, will add another character-width worth of space.</P
+><P
+>Other programs should just resize by one pixel.</P
+></BLOCKQUOTE
+></DIV
+><DIV
+CLASS="TABLE"
+><A
+NAME="AEN562"
+></A
+><P
+><B
+>Table 5-4. Window Movement</B
+></P
+><TABLE
+BORDER="0"
+FRAME="void"
+CLASS="CALSTABLE"
+><COL><COL><THEAD
+><TR
+><TH
+>Action</TH
+><TH
+>Result</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>SendToWorkspace n</KBD
+></TD
+><TD
+>Send current window to a specified workspace. e.g. :SendToWorkspace 1</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>TakeToWorkspace n</KBD
+></TD
+><TD
+>Send current window to a specified workspace and change to the workspace.
+  </TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>Move</KBD
+></TD
+><TD
+>by delta-x delta-y.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>MoveLeft</KBD
+></TD
+><TD
+>Guess.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>MoveRight</KBD
+></TD
+><TD
+>Guess.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>MoveUp</KBD
+></TD
+><TD
+>Guess.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>MoveDown</KBD
+></TD
+><TD
+>Guess.</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><DIV
+CLASS="TABLE"
+><A
+NAME="AEN598"
+></A
+><P
+><B
+>Table 5-5. Miscellaneous</B
+></P
+><TABLE
+BORDER="0"
+FRAME="void"
+CLASS="CALSTABLE"
+><COL><COL><THEAD
+><TR
+><TH
+>Action</TH
+><TH
+>Result</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>AbortKeychain</KBD
+></TD
+><TD
+>In Multi-binding keychains, cancel the keybinding.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>ExecCommand</KBD
+></TD
+><TD
+>Execute a command. Example :ExecCommand xmms -t.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>RootMenu</KBD
+></TD
+><TD
+>Summon the Root Menu.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>WorkSpaceMenu</KBD
+></TD
+><TD
+>Summon the Workspace Menu.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>Restart</KBD
+></TD
+><TD
+>Restart fluxbox.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>Reconfigure</KBD
+></TD
+><TD
+>Reconfigure fluxbox, rereads configuration.
+e.g. if <TT
+CLASS="FILENAME"
+>keys</TT
+> was changed, but <TT
+CLASS="FILENAME"
+>init</TT
+> and <TT
+CLASS="FILENAME"
+>slitlist</TT
+>
+might be written before read.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>SetStyle</KBD
+></TD
+><TD
+>Load the specified file.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>SetWorkspaceName</KBD
+></TD
+><TD
+>.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>SaveRC</KBD
+></TD
+><TD
+>Save resource files.</TD
+></TR
+><TR
+><TD
+><KBD
+CLASS="USERINPUT"
+>Quit</KBD
+></TD
+><TD
+>Quit fluxbox.</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x328.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="chap-bg.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Key Names</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c296.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Desktop Backgrounds</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

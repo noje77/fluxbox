@@ -1,0 +1,11 @@
+tmpfile=`mktemp`
+head -n4 origin.txt > $tmpfile
+echo "I'm line 5 now" >> $tmpfile
+tail -n +5 origin.txt >> $tmpfile
+mv $tmpfile origin.txt
+
+
+Combine head and tail
+
+cat <(head -n4 input) <(echo 'Line 5!') <(tail -n +5 input) > output
+

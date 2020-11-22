@@ -1,0 +1,174 @@
+[app] (name=fbrun)
+  [Position]	(UPPERLEFT)	{44% 45%}
+  [Layer]	{6}
+[end]
+[app] (name=vlc) (class=vlc)
+  [Dimensions]	{50% 94%}
+  [Position]	(UPPERLEFT)	{50% 6%}
+[end]
+[app] (name=atril) (class=Atril)
+  [Dimensions]	{50% 100%}
+  [Position]	(UPPERLEFT)	{50% 0%}
+  [Close]	{yes}
+[end]
+[app] (name=file_progress) (class=Caja)
+  [Position]	(UPPERLEFT)	{36% 31%}
+  [Layer]	{6}
+[end]
+[app] (name=gimp) (class=Gimp) (role=gimp-toolbox)
+  [Position]	(UPPERLEFT)	{83% 10%}
+  [Layer]	{6}
+[end]
+[app] (name=mate-terminal) (class=Mate-terminal) (role=mate-terminal)
+  [Dimensions]	{42% 48%}
+  [Position]	(UPPERLEFT)	{0% 0%}
+  [Tab]		{yes}
+[end]
+[transient] (name=engrampa) (class=Engrampa)
+  [Layer]	{8}
+[end]
+[app] (name=gimp-2.8) (class=Gimp-2.8) (role=gimp-toolbox)
+  [Dimensions]	{6% 82%}
+  [Position]	(UPPERLEFT)	{83% 10%}
+  [Layer]	{6}
+[end]
+[app] (name=gimp-2.8) (class=Gimp-2.8) (role=gimp-dock)
+  [Dimensions]	{11% 83%}
+  [Position]	(UPPERLEFT)	{72% 10%}
+  [Layer]	{6}
+[end]
+[app] (name=Navigator) (class=Firefox) (role=browser)
+  [Dimensions]	{75% 100%}
+  [Position]	(UPPERLEFT)	{0% 0%}
+[end]
+[app] (name=caja) (class=Caja)
+  [Dimensions]	{65% 86%}
+  [Position]	(UPPERLEFT)	{1% 3%}
+  [Tab]		{yes}
+[end]
+[app] (name=xcalc) (class=XCalc)
+  [Layer]	{6}
+[end]
+[app] (name=google-chrome) (class=Google-chrome) (role=browser)
+  [Dimensions]	{60% 79%}
+  [Position]	(UPPERLEFT)	{18% 13%}
+[end]
+[app] (name=engrampa) (class=Engrampa)
+  [Layer]	{6}
+[end]
+[app] (name=pulseaudio-equalizer.py) (class=Pulseaudio-equalizer.py)
+  [Dimensions]	{39% 30%}
+  [Position]	(UPPERLEFT)	{31% 35%}
+  [Layer]	{8}
+[end]
+[app] (name=vdpau) (class=MPlayer)
+  [Layer]	{6}
+[end]
+[transient] (name=scribus) (class=Scribus)
+  [Dimensions]	{49% 45%}
+  [Position]	(UPPERLEFT)	{29% 25%}
+  [Layer]	{8}
+[end]
+[app] (name=gpartedbin) (class=GParted)
+[end]
+[app] (name=liferea) (class=Liferea)
+  [Dimensions]	{91% 85%}
+[end]
+[app] (name=gimp) (class=Gimp) (role=gimp-dock)
+  [Layer]	{6}
+[end]
+[app] (name=lmms) (class=Lmms)
+  [Dimensions]	{33% 44%}
+  [Position]	(UPPERLEFT)	{43% 11%}
+[end]
+[app] (name=remotevstplugin.exe) (class=Wine)
+  [Dimensions]	{22% 26%}
+  [Position]	(UPPERLEFT)	{52% 26%}
+[end]
+[app] (name=scangearmp2) (class=Scangearmp2)
+  [Position]	(UPPERLEFT)	{51% 46%}
+[end]
+[app] (name=update-manager) (class=Update-manager)
+  [Layer]	{6}
+[end]
+[app] (name=epoc.exe) (class=Wine)
+  [Dimensions]	{49% 73%}
+  [Position]	(UPPERLEFT)	{20% 6%}
+[end]
+[app] (name=scrcpy) (class=scrcpy)
+  [Layer]	{6}
+[end]
+[transient] (name=caja) (class=Caja)
+[end]
+[app] (name=easytag) (class=Easytag)
+  [Sticky]	{no}
+[end]
+[app] (name=empty_trash) (class=Caja)
+  [Dimensions]	{34% 18%}
+  [Position]	(UPPERLEFT)	{33% 35%}
+  [Layer]	{6}
+[end]
+[app] (name=trashapplet) (class=Trashapplet)
+  [Dimensions]	{21% 21%}
+  [Position]	(UPPERLEFT)	{60% 18%}
+  [Close]	{yes}
+[end]
+[transient] (name=gpick) (class=Gpick)
+  [Dimensions]	{42% 58%}
+  [Position]	(UPPERLEFT)	{2% 14%}
+[end]
+[app] (name=alarm-clock-applet) (class=Alarm-clock-applet)
+  [Dimensions]	{18% 22%}
+  [Position]	(UPPERLEFT)	{79% 0%}
+  [Layer]	{6}
+[end]
+[app] (name=gimp) (class=Gimp) (role=gimp-message-dialog)
+  [Dimensions]	{38% 33%}
+  [Position]	(UPPERLEFT)	{31% 26%}
+  [Layer]	{6}
+  [Close]	{yes}
+[end]
+[transient] (name=gimp) (class=Gimp) (role=gimp-message-dialog)
+  [Dimensions]	{35% 24%}
+  [Position]	(UPPERLEFT)	{33% 40%}
+  [Layer]	{6}
+[end]
+[app] (name=Pidgin) (class=Pidgin) (role=buddy_list)
+  [Dimensions]	{23% 63%}
+  [Position]	(UPPERLEFT)	{68% 24%}
+[end]
+[transient] (name=blur-motion) (class=Gimp) (role=gimp-blur-motion)
+  [Dimensions]	{17% 37%}
+  [Position]	(UPPERLEFT)	{58% 4%}
+[end]
+[app] (name=mate-screenshot) (class=Mate-screenshot)
+  [Position]	(UPPERLEFT)	{0% 0%}
+  [Deco]	{0x5ff}
+  [Layer]	{6}
+[end]
+[app] (name=virt-manager) (class=Virt-manager)
+  [Dimensions]	{89% 98%}
+  [Position]	(UPPERLEFT)	{3% 0%}
+  [Close]	{yes}
+[end]
+[app] (name=nomacs) (class=Image Lounge)
+  [Dimensions]	{59% 62%}
+  [Position]	(UPPERLEFT)	{11% 18%}
+[end]
+[app] (name=Blender) (class=Blender)
+  [Dimensions]	{38% 46%}
+  [Position]	(UPPERLEFT)	{0% 0%}
+  [Close]	{yes}
+[end]
+[app] (name=gvim) (class=Gvim)
+  [Dimensions]	{100% 100%}
+  [Position]	(UPPERLEFT)	{0% 0%}
+[end]
+[app] (name=Antidote10.bin) (class=Antidote 10)
+  [Dimensions]	{45% 64%}
+  [Position]	(UPPERLEFT)	{32% 13%}
+[end]
+[app] (name=VirtualBox Manager) (class=VirtualBox Manager)
+  [Dimensions]	{45% 87%}
+  [Position]	(UPPERLEFT)	{51% 5%}
+[end]

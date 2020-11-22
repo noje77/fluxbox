@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>fbrun</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Fluxbox Documentation"
+HREF="book1.html"><LINK
+REL="UP"
+TITLE="Tools"
+HREF="c159.html"><LINK
+REL="PREVIOUS"
+TITLE="Tools"
+HREF="c159.html"><LINK
+REL="NEXT"
+TITLE="fluxbox-generate_menu"
+HREF="sect-fbgm.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="docbook.css"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Fluxbox Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c159.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Tools</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="sect-fbgm.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN167"
+><TT
+CLASS="FILENAME"
+>fbrun</TT
+></A
+></H1
+><P
+><TT
+CLASS="FILENAME"
+>fbrun</TT
+> is basically equivalent to the
+"Run..." dialog in other desktop environment. This means that it
+is an easy way to start a program that isn't contained in the menu
+(or needs a special set of parameters for this particular
+invocation).</P
+><P
+>Another way <TT
+CLASS="FILENAME"
+>fbrun</TT
+> can be useful is to
+be called from the menu with a preloaded command line that you can
+edit and then execute. An example might be sshing to a very long
+host name with lots of options of which one changes all the time.
+In this case, you could add an entry for fbrun to your menu that
+contains all the options and the host name. When you use said
+entry, you could edit the line as necessary and execute it.</P
+><P
+><TT
+CLASS="FILENAME"
+>fbrun</TT
+> has various options:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>   -font [font name]           Text font
+   -title [title name]         Set title
+   -text [text]                Text input
+   -w [width]                  Window width in pixels
+   -h [height]                 Window height in pixels
+   -display [display string]   Display name
+   -pos [x] [y]                Window position in pixels
+   -fg [color name]            Foreground text color
+   -bg [color name]            Background color
+   -na                         Disable antialias
+   -hf [history file]          History file to load (default ~/.fluxbox/history)
+   -help                       Show this help</PRE
+><P
+>Most of those options should be self-explanatory. The
+options <KBD
+CLASS="USERINPUT"
+>-text</KBD
+> and <KBD
+CLASS="USERINPUT"
+>-hf</KBD
+>
+maybe need some explanation. The former is used to specify the
+pre-loaded (editable) text inside the <TT
+CLASS="FILENAME"
+>fbrun</TT
+>
+window. If you'd like to specify multiple arguments (like
+<KBD
+CLASS="USERINPUT"
+>ssh -X -f</KBD
+>), be sure to wrap them in
+quotes:</P
+><PRE
+CLASS="PROGRAMLISTING"
+>	fbrun -text "ssh -X -f"</PRE
+><P
+>The <KBD
+CLASS="USERINPUT"
+>-hf</KBD
+> option specifies the history
+file, which is a place where <TT
+CLASS="FILENAME"
+>fbrun</TT
+> keeps its
+"memory" of the command lines you used (just like bash does).
+Normally you don't need this option, then the default is used. It
+might prove useful if you have multiple <TT
+CLASS="FILENAME"
+>fbrun</TT
+>
+entries in your menu and want to keep separate histories for each
+of them.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c159.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="sect-fbgm.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Tools</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c159.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>fluxbox-generate_menu</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
