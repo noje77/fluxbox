@@ -49,10 +49,12 @@ cp -rf $here/data/caja ~/.config/
 sudo cp $here/data/bin/* /usr/local/bin/
 }
 
-## install software 
-#xpad rofi tint2 rename mlocate csvtool xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy xscreensaver-screensaver-webcollage redshift redshift-gtk numlockx imagemagick* conky* 
+instsoft ()
+{
+sudo apt install xpad rofi tint2 rename mlocate csvtool xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy xscreensaver-screensaver-webcollage redshift redshift-gtk numlockx imagemagick* conky conky-std
+}
 
-
+instsoft
 prscr
 skxd
-#influxset
+influxset
