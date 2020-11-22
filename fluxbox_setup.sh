@@ -51,10 +51,21 @@ sudo cp $here/data/bin/* /usr/local/bin/
 
 instsoft ()
 {
-sudo apt install xpad rofi tint2 rename mlocate csvtool xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy xscreensaver-screensaver-webcollage redshift redshift-gtk numlockx imagemagick conky conky-std nomacs recode curl html2text
+sudo apt install xpad rofi tint2 rename mlocate csvtool xscreensaver xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra xscreensaver-screensaver-bsod xscreensaver-screensaver-dizzy xscreensaver-screensaver-webcollage redshift redshift-gtk numlockx imagemagick conky conky-std nomacs recode curl html2text 
+}
+
+
+goocaml ()
+{
+sudo add-apt-repository ppa:alessandro-strada/ppa
+sudo apt-get update
+sudo apt-get install google-drive-ocamlfuse
+mkdir ~/googldrive
 }
 
 instsoft
 prscr
 skxd
 influxset
+goocaml 
+sudo 7z x data/fonts.7z -o/usr/share/fonts/truetype/
