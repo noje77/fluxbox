@@ -69,3 +69,4 @@ skxd
 influxset
 goocaml 
 sudo 7z x data/fonts.7z -o/usr/share/fonts/truetype/
+sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 100
